@@ -1,32 +1,33 @@
 
 # Project Title
 
-GetBus - Book Bus Travels, AC Bus & Bus Hire
+FetanBus - Book Bus Travels
 
 An online bus ticket booking system with a login system, validated 
 payment form and ticket pdf print. 
 The whole backend is coded in core PHP and MySql.
-## Skills
-* Php
-* Mysql
+## Technologies
+* Python
+* Flask
+* Sqlalchemy/Sqlite
 * Javascript
 * HTML
 * CSS
 ## Main Features
 * New user validated sign-up form
-* Old user validated login form
-* Can choose number of seats based on number of vacant seats
+* Existng user validated login form
+* Customer can reserve his/her favorite seats
 * Automatically updates seats left value to database
-* The payment form is completely validated - 16 digit card number, 3 digit cvv, expiry date must be at least 2 weeks from present date
+* The payment form is completely validated which has integrated online system with official  financial institutions
 * Can print the ticket with all passenger and bus details already set.
-* There are two databases, one for user details and one for bus details.
+* Administrators can manage routes and bank systems
 ## Installation
-* Upload online_bus to the directory of your choice.
-* Import MySql Db file to your database software (E.g : PhpMyAdmin -> Create DB -> Import the database )
+* Upload fetan_bus to the directory of your choice.
+* Import Sqlite Db file to your database software (E.g : PhpMyAdmin -> Create DB -> Import the database )
 * Configure connection between your database and server.
-* Navigate to the installation in your browser ( E.g : http://localhost/online_bus )
+* Navigate to the installation in your browser ( E.g : http://localhost/fetan_bus )
 * Done :)
 ## Authors
 
-https://github.com/Amarjit-Khan
+https://github.com/tech7895
 
