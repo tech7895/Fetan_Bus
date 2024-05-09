@@ -1,0 +1,82 @@
+.container {
+    width: auto;
+    margin: auto;
+    size: 100px;
+    padding: 10px;
+    justify-content: center;
+    display: flex;
+  }
+  
+  .content-section {
+    background-color: rgb(192, 221, 210);
+    opacity: 90%;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    width: fit-content;
+    padding: 20px;
+    position: fixed; 
+    top: 110px;
+  
+  }
+  
+  legend {
+    font-size: 48px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dee2e6;
+    border-radius: 5px;
+    width: auto;
+    height: auto;
+    
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  .form-control-label {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .form-control {
+    height: 25px;
+    font-size: 18px;
+  }
+  
+  .form-check {
+    margin-left: 30px; /* Adjust the margin as needed */
+  }
+  
+  .invalid-feedback {
+    color: #dc3545;
+    border-color: #dc3545;
+  }
+  
+  .btn-outline-info {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: rgb(112, 197, 164);
+    margin-left: 20px; /* Adjust the margin as needed */
+    margin-bottom: 10px;
+  }
+  
+  .text-muted {
+    font-size: 16px;
+    position: relative;
+    top: 370px;
+    margin-left: 130px;
+    
+    
+  }
+  
+  
+  .form-check-label {
+    padding-left: 20px;
+  }
+  
+  .form-check-input {
+    margin-left: -20px;
+  }

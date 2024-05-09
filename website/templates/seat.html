@@ -1,0 +1,112 @@
+{% extends 'base2.html' %}
+
+{% block title %}Select Seats{% endblock %}
+
+{% block body %}
+<h2 class="titles">Choose Your Seats for {{ bus.bus_name }}</h2>
+<h4 class="titles2">From {{ bus.departure }} to {{ bus.destination }}</h4>
+<link rel="stylesheet" href="../static/css/seat.css">
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <form method="POST" action="{{ url_for('views.confirm_booking', bus_id=bus.id) }}">
+
+                <input type="hidden" name="bus_id" value="{{ bus.id }}">
+                <div class="form-group">
+                    {% for row in range(1, 16) %}
+                    <div class="row mb-2">
+                        {% for col in range(1, 5) %}
+                        <div class="col-md-3">
+                            {% set seat_number = (row - 1) * 4 + col %}
+                            <label for="seat_{{ seat_number }}" class="seat-label">
+                                <input type="checkbox" name="selected_seats[]" id="seat_{{ seat_number }}" value="{{ seat_number }}" class="seat-input">
+                                <span class="seat-number">{{ seat_number }}</span>
+                            </label>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+                </div>
+                <!-- Confirm Booking button moved inside the form -->
+                
+            </form>
+        </div>
+        <div class="col-md-3">
+            <div class="selected-seats">
+                <h4 class="tit1">Your Seats</h4>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Seat Number</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody id="selected-seats-body">
+                        <!-- Selected seats will be dynamically added here -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Total Price</th>
+                            <td id="total-price"> -- <span>Birr</span></td>
+                        </tr>
+                        
+                    </tfoot>
+                    
+                </table>
+                <button type="submit" id="confirm-booking-btn" class="btn btn-primary mt-3">Confirm Booking</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // JavaScript to handle seat selection and update total price
+    document.addEventListener('DOMContentLoaded', function () {
+        const selectedSeatsBody = document.getElementById('selected-seats-body');
+        const totalPriceCell = document.getElementById('total-price');
+        const seatInputs = document.querySelectorAll('.seat-input');
+        const confirmBookingButton = document.getElementById('confirm-booking-btn');
+        const form = document.querySelector('form');
+
+        seatInputs.forEach(function (seatInput) {
+            seatInput.addEventListener('change', function () {
+                updateSelectedSeats();
+            });
+        });
+
+        confirmBookingButton.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent default button click behavior
+            form.submit(); // Submit the form
+        });
+
+        function updateSelectedSeats() {
+            let totalPrice = 0;
+            selectedSeatsBody.innerHTML = '';
+
+            seatInputs.forEach(function (seatInput) {
+                const seatLabel = seatInput.parentElement; // Get the label element containing the seat
+                const seatNumber = seatInput.value;
+                const price = parseFloat('{{ bus.price }}'); // Assuming bus price is set as a string in the template
+
+                if (seatInput.checked) {
+                    seatLabel.classList.add('selected'); // Add 'selected' class to change color
+                    totalPrice += price;
+
+                    const seatRow = document.createElement('tr');
+                    seatRow.innerHTML = `
+                        <td>${seatNumber}</td>
+                        <td>${price}</td>
+                    `;
+                    selectedSeatsBody.appendChild(seatRow);
+                } else {
+                    seatLabel.classList.remove('selected'); // Remove 'selected' class if unchecked
+                }
+            });
+
+            totalPriceCell.innerHTML = `${totalPrice.toFixed(2)} <span>Birr</span>`;
+        }
+    });
+</script>
+
+
+{% endblock %}

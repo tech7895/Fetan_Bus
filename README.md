@@ -23,11 +23,10 @@ The whole backend is coded in core PHP and MySql.
 * Administrators can manage routes and bank systems
 ## Installation
 * Upload fetan_bus to the directory of your choice.
-* Import Sqlite Db file to your database software (E.g : PhpMyAdmin -> Create DB -> Import the database )
+* Create Sqlite Db file to your database software 
 * Configure connection between your database and server.
-* Navigate to the installation in your browser ( E.g : http://localhost/fetan_bus )
+* Navigate to the installation in your browser ( E.g : https://biruk12.pythonanywhere.com/ )
 * Done :)
 ## Authors
 
 https://github.com/tech7895
-

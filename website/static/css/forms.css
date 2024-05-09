@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('../images/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.base .base-content{  /*button texts*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    color:#2f4739;
+    
+}
+
+.base .base-content .form{
+    height: 500px;
+    width: 300px;
+    background: rgba(234, 243, 240, 0.8);
+    border: 1px solid #93ff3a;
+    border-radius: 10px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.base .base-content .form h3 { /*title*/
+    color: #077940;
+    font-family: cursive;
+    margin-bottom: 40px;
+    font-size: 30px;
+    font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.base .base-content .form hr{
+    width: 88%;
+    margin-top: 30px;
+    margin-left: 20px;
+    color: #069167;
+    background-color: #FF723A;
+    opacity: 0.5;
+    margin-bottom: 0px;
+}
+#base-signup .base-content .form hr{
+    margin-top: 2px;
+}
+#base-signup .base-content .form input{
+    margin-top: 5px;
+}
+.base .base-content .email, .base .base-content .password, .base .base-content .name{
+    margin-top: 3px;
+    font-size: 22px;
+    font-weight: 500;
+    font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+
+}
+.base .base-content .form input{
+    background: none;
+    border: none;
+    outline: none;
+    color: #1a1a1a;
+    font-size: 17px;
+}
+.base .base-content .form .buttons input, .base .base-content .form .buttons a{
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 20px;
+    font-family: cursive;
+    padding: 5 20px;
+    text-decoration: none;
+    color: #fff;
+    background:#068d55;
+    padding: 5px;
+    /*border: 2px solid #20D489;*/
+    border-radius: 15px;
+    background-size: contain;
+    transition: all 0.3s ease;
+    font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.base .base-content .form .buttons input:hover, .base .base-content .form .buttons a:hover{
+    background: transparent;
+    border: 1px solid #fff;
+}
+.label1 {
+    color: #515e58;
+    font-size: 1rem;
+    font-weight: lighter;
+}

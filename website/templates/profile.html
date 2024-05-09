@@ -1,0 +1,43 @@
+{% extends 'base2.html' %}
+
+{% block title %} My Profile {% endblock %}
+
+
+{% block body %}
+
+<div class="container my-5">
+    <div class="row">
+        <img class="rounded-circle img" src="{{ image_file }}">
+        <h3 style="color: white;">Hi  <span>{{ customer.username }}</span></h3>
+
+        <div class="col-sm-2 border-end" style="margin-top: 20px;">
+        
+            <ul class="list-unstyled">
+                <li class="d-grid"><a href="{{ url_for('views.find_bus') }}" class="btn btn-primary" style="margin-top: 5px; background: rgb(230, 180, 20);">Find your Bus</a></li>
+                <li class="d-grid"><a href="/change-password/{{ customer.id }}" class="btn btn-primary" style="margin-top: 5px;">Change Password</a></li>
+                <li class="d-grid"><a href="/change-password/{{ customer.id }}" class="btn btn-primary" style="margin-top: 5px;">Choose Your Route</a></li>
+
+            </ul>
+        
+        </div>
+        <div class="content-section">
+            
+        </div>
+        <div class="col-sm-5 offset-sm-1" style="background-color: white; border-radius: 18px; margin-top: 20px;">
+            <div class="row">
+
+                <div class="col-sm-8">
+                    <div class="card m-2">
+
+                        <h3>{{ customer.username }}</h3>
+                        <p>Email: {{ customer.email }}</p>
+                    </div>
+                </div>
+
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+h1 {
+    text-align: center;
+    color: rgb(46, 46, 70);
+    font-size: 2.5rem;
+    z-index: 1;
+}
+
+.payment-container {
+    display: inline-flex;
+    justify-content: center;
+    font-size: 3.8rem;
+    color: #3a1e1e;
+    padding: 30px 35px;
+    
+}
+.heading{
+    border: 3px solid rgb(18, 158, 93);
+}
+
+
+.payment-icon {
+    width: 150px;
+    height: 100px;
+    margin: 10px; /* Adjust margin to add space between icons */
+    cursor: pointer;
+    background-size: contain;
+    border-radius: 10px;
+    border: 3px solid rgb(33, 204, 153);
+    margin-left: 100px;
+}
+
+.para{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 225px;
+    font-size: 1rem;
+    border: solid rgb(33, 204, 153);
+    text-underline-offset: 0px;
+    background-color: rgb(36, 50, 175);
+    color: gold;
+    padding: 10px;
+    margin-left: 80px;
+}
+.para p {
+    text-decoration: none; /* Remove underline for links */
+}
+
+body {
+	margin:0px;
+	padding:0px;
+
+	color: #484848;
+	font-size: 14px;
+	font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	background-image: url("../images/watermark.png");
+	background-repeat: no-repeat; /* or repeat-x or repeat-y if needed */
+	background-size: cover; /* Adjusts the background image size to cover the entire body */
+	background-position: center center; /* Centers the background image */
+		/* Additional CSS properties for the body if necessary */
+    margin-top: 100px;
+}

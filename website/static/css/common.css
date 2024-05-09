@@ -1,0 +1,232 @@
+#header_logo {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    height: 100px;
+    width: 110px;
+    background-color: white;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding-top: 0px; /* Adjusted padding */
+    margin-left: -10px;
+    z-index: 1;
+}
+
+#header_logo img {
+    left: 10px;
+    width: 110px; /* Set the desired width */
+    height: 100px; /* Let the height adjust proportionally based on the width */
+    display: block; /* Ensures the image is treated as a block-level element */
+    margin: 0 auto; /* Center the image horizontally within its container */
+}
+
+
+header {
+    
+    position: relative;
+	bottom: top;
+    left: 0;
+    height: 102px; /* Adjust height as needed */
+    background-color: #333; /* Adjust background color */
+    color: white;
+    line-height: normal;
+    overflow: hidden; /* Hides overflowing content */
+    text-align: left;
+    padding-top: 0px;
+    z-index: 99;
+}
+
+.moving-text {
+    position: absolute;
+    top: 40%;
+    left: 0; /* Initially position the text at the left edge of the header */
+    white-space: nowrap; /* Prevents text from wrapping */
+    animation: moveText 10s linear infinite; /* Adjust animation duration as needed */
+    width: 100%; /* Set width to be twice the size of the header to ensure it moves all the way to the edge */
+    font-size: 1.5rem;
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateX(0%); /* Start position */
+    }
+    100% {
+        transform: translateX(100%); /* End position */
+    }
+}
+
+#header_links {
+    position: absolute;
+    top: 0;
+    right: 0; /* Keep the link container aligned to the right */
+    left: 10;
+    height: 50px; /* Adjusted height */
+    padding-top: 20px; /* Adjusted padding */
+    margin-right: 10px;
+    z-index: 1;
+}
+
+.link {
+    height: 40px;
+    width: 70px; /* Adjusted width */
+    color: rgb(248, 248, 248);
+    background-color: rgb(33, 179, 98);
+    background-size: auto;
+    border-radius: 7px;
+    text-align: center;
+    z-index: 1;
+    font-size: 1rem;
+    padding: 3px; /* Add padding for better appearance */
+    line-height: 40px; /* Adjusted line-height */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Allow for padding and width to work */
+    margin-right: 10px; /* Add margin to push the link to the right */
+}
+
+.link:hover {
+    background-color: rgb(174, 241, 205);
+    color: rgb(31, 177, 80);
+}
+.link2 {
+    height: 40px;
+    width: 70px; /* Adjusted width */
+    color: rgb(248, 248, 248);
+    background-color: rgb(117, 4, 151);
+    background-size: auto;
+    border-radius: 7px;
+    text-align: center;
+    z-index: 1;
+    font-size: 1rem;
+    padding: 3px; /* Add padding for better appearance */
+    line-height: 40px; /* Adjusted line-height */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Allow for padding and width to work */
+    margin-right: 10px; /* Add margin to push the link to the right */
+}
+
+.link2:hover:hover {
+    background-color: rgb(174, 241, 205);
+    color: rgb(105, 0, 167);
+}
+
+.link3 {
+    height: 40px;
+    width: 70px; /* Adjusted width */
+    color: rgb(248, 248, 248);
+    background-color: rgb(214, 164, 0);
+    background-size: auto;
+    border-radius: 7px;
+    text-align: center;
+    z-index: 1;
+    font-size: 1rem;
+    padding: 3px; /* Add padding for better appearance */
+    line-height: 40px; /* Adjusted line-height */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Allow for padding and width to work */
+    margin-right: 10px; /* Add margin to push the link to the right */
+}
+
+.link3:hover {
+    background-color: rgb(174, 241, 205);
+    color: rgb(31, 177, 80);
+}
+
+@keyframes blink {
+    0% { background-color: rgb(33, 72, 179); } /* Initial background color */
+    50% { background-color: rgb(174, 241, 205); } /* Color to blink to */
+    100% { background-color: rgb(33, 72, 179); } /* Back to initial color */
+}
+body {
+	margin:0px;
+	padding:0px;
+
+	color: #484848;
+	font-size: 14px;
+	font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	/*background-image: url("../images/watermark.jpg");*/
+	background-repeat: no-repeat; /* or repeat-x or repeat-y if needed */
+	background-size: cover; /* Adjusts the background image size to cover the entire body */
+	background-position: center center; /* Centers the background image */
+		/* Additional CSS properties for the body if necessary */
+}
+
+footer {
+    flex-shrink: 0; /* Prevent footer from shrinking */
+    background-color: #034129; /* Adjust background color */
+    color: rgb(220, 235, 91); /* Adjust text color */
+    padding: 20px; /* Add padding */
+    text-align: center; /* Center-align text */
+    width: 100%; /* Set width to 100% */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9999; /* Ensure footer is above other elements */
+}
+
+.table {
+    background-color: rgb(96, 110, 95);
+    color: rgb(255, 241, 241);
+    font-size: 1rem;
+    border: none;
+}
+.table-dark {
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+.table4 {
+    background-color: rgb(74, 87, 73);
+    color: rgb(31, 30, 30);
+    font-size: 1rem;
+}
+
+.hover-row1 {
+    font-size: 1.5rem;
+}
+.hover-row1:hover {
+    background-color: rgb(0, 167, 111);
+}
+
+.hover-row:hover {
+    background-color: rgb(31, 168, 88);
+}
+
+ab {
+    background-color: rgb(1, 92, 92);
+}
+
+.btn btn-primary {
+    background-color: rgb(230, 178, 9);
+}
+.btn-primary {
+    background-color: rgb(230, 178, 9);
+    border: none;
+}
+
+.btn-primary1 {
+    background-color: rgb(230, 178, 9);
+    border: none;
+}
+
+.btn-primary2 {
+    background-color: rgb(207, 78, 27);
+    color: white;
+    border: none;
+}
+
+.btn-primary2:hover {
+    background-color: red;
+}
+
+.btn-primary:hover {
+    background-color: rgb(161, 119, 4);
+    color: rgb(255, 255, 255);
+    border: none;
+}
+.rounded-circle {
+    width: 130px;
+    height: 100px;
+    background-color: white;
+}

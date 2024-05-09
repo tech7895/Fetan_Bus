@@ -1,0 +1,57 @@
+css
+Copy
+/* seat.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.seat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.seat-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.seat {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    background-color: #ccc;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #333;
+}
+
+.seat:not(:last-child) {
+    margin-right: 20px;
+}
+
+.selected {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+.selected-seats-container {
+    width: 200px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    margin-left: 20px; /* Add margin to separate from seat container */
+}

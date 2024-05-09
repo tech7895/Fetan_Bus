@@ -1,0 +1,61 @@
+<!-- available.html -->
+
+{% extends 'base2.html' %}
+
+{% block title %}Available Buses{% endblock %}
+
+{% block body %}
+
+{% if items | length < 1 %}
+<h3>No available buses for the selected route</h3>
+{% else %}
+<br>
+<h4 style="color: yellow">Available Buses for the selected route</h4><br>
+<table class="table table-hov">
+    <!-- Table headers -->
+    <thead>
+        <!-- Header row -->
+        <tr>
+            <!-- Header columns -->
+            <th scope="col">Departure</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Bus Type</th>
+            <th scope="col"></th>
+            <th scope="col">Departure Date</th>
+            <th scope="col">Departure Time</th>
+            <th scope="col">Arrival Time</th>
+            <th scope="col">Price (ETB)</th>
+            <th scope="col">    </th>
+            <!-- Add other header columns as needed -->
+            <th scope="col"></th> <!-- Add an empty header column for the "Choose" button/link -->
+        </tr>
+    </thead>
+    
+    <!-- Table body -->
+    <tbody>
+        <!-- Loop through each bus -->
+        {% for item in items %}
+        <tr class="hover-row1">
+            <!-- Bus information -->
+            <td>{{ item.departure }}</td>
+            <td>{{ item.destination }}</td>
+            <td>{{ item.bus_name }}</td>
+        <td>
+            <img src="{{ item.bus_picture }}" alt="" style="max-height: 80px; border-radius:10px; max-width: 120px; border-radius: 2px;">
+        </td>
+        <td>{{ item.departure_date.strftime('%Y-%m-%d') }}</td>
+        <td>{{ item.departure_time }}</td>
+        <td>{{ item.arrival_time }}</td>
+        <td>{{ item.price }}</td>
+            <!-- Add other columns for bus details -->
+            <!-- Add a column for the "Choose" button/link -->
+            <td>
+                <a href="{{ url_for('views.select_seats', bus_id=item.id) }}" class="btn btn-primary">Choose Bus</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+<link rel="stylesheet" href="/static/css/common.css">
+{% endblock %}

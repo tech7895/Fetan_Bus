@@ -1,0 +1,67 @@
+{% extends 'base2.html' %}
+
+{% block title %} Manage Routes {% endblock %}
+
+
+{% block body %}
+
+{% if fields | length < 1 %}
+<br>
+<h3 style="color: yellow;">No Buses scheduled</h3>
+
+{% else %}
+
+<table class="table table-hov">
+    <thead>
+        <tr class="hover-row">
+            <th scope="col">ID</th>
+            <th scope="col">Date Added</th>
+            <th scope="col">Departure</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Bus Name</th>
+            <th scope="col"></th>
+            <th scope="col">Departure Date</th>
+            <th scope="col">Departure time</th>
+            <th scope="col">Arrival Time</th>
+            <th scope="col">Price</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for field in fields %}
+
+        <tr class="hover-row">
+            <th scope="row">{{ field.id }}</th>
+            <td>{{ field.date_added }}</td>
+            <td>{{ field.departure }}</td>
+            <td>{{ field.destination }}</td>
+            <td>{{ field.bus_name }}</td>
+            <td>
+                <img src="{{ field.bus_picture }}" alt="" style="max-height: 50px; max-width: 70px; border-radius: 2px;">
+            </td>
+            <td>{{ field.departure_date }}</td>
+            <td>{{ field.departure_time }}</td>
+            <td>{{ field.arrival_time}}</td>
+            <td>{{ field.price}}</td>           
+
+
+            <td>
+                <a href="/update-field/{{ field.id }}" class="btn btn-primary">Update</a>
+                <a href="/delete-field/{{ field.id }}" class="btn btn-primary2">Delete</a>
+            </td>
+            
+
+        </tr>
+
+
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% endif %}
+
+<link rel="stylesheet" href="../static/css/common.css">
+{% endblock %}

@@ -1,0 +1,178 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+.bg{
+    width: 120%;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.container {
+    /*display: flex;*/
+    justify-content: center;
+    font-size: 3.8rem;
+    color: #f16e6e;
+    padding: 20px 25px;
+    margin-top: 0px;
+    z-index: -2;
+}
+.heading{
+    border: 6px solid rgb(255, 243, 79);
+    background-size: 200px;
+    background-color: rgb(17, 75, 55);
+    opacity: 80%;
+    text-align: center;
+}
+
+.para{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    margin-left: 400px;
+    font-size: 2.7rem;
+    z-index: 21;
+    color: rgb(230, 252, 40);
+}
+.para2{
+    margin-top: -290px;
+    align-items: left;
+    justify-content: center;
+    font-weight: bold;
+    margin-left: 50px;
+    font-size: 3.5rem;
+    z-index: 21;
+    color: rgb(241, 63, 173);
+    font-family: 'Great Vibes', cursive;
+
+}
+
+.para3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 400px;
+    margin-left: 0px;
+    font-size: 3.5rem;
+    z-index: 91;
+    color: rgb(230, 252, 40);
+    font-family: 'Dancing Script', cursive;
+
+}
+
+
+body {
+	margin:0px;
+	padding:0px;
+	color: #484848;
+	font-size: 14px;
+	font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	/*background-image: url("../images/watermark.png");*/
+	background-repeat: no-repeat; /* or repeat-x or repeat-y if needed */
+	background-size: cover; /* Adjusts the background image size to cover the entire body */
+	background-position: center center; /* Centers the background image */
+		/* Additional CSS properties for the body if necessary */
+}
+
+.link1 {
+    height: 60px;
+    width: 300px; /* Adjusted width */
+    color: rgb(248, 248, 248);
+    background-color: rgb(208, 223, 6);
+    background-size: 100px;
+    border-radius: 7px;
+    line-height: 60px; /* Adjusted line-height */
+    display: inline-block; /* Allow for padding and width to work */
+    text-align: center;
+    animation: blink 1s infinite; /* Apply the animation */
+    font-size: 1.7rem;
+    margin: -20px 540px;
+    margin-bottom: 150px;
+    padding: 10px 34px;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+
+.link1:hover {
+    background-color: rgb(242, 255, 58);
+    color: rgb(3, 112, 39);
+}
+
+/*********************************/
+
+.images-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.left-image {
+    position: relative;
+    margin-left: auto;
+    left: 20%; /* Adjust this value to position the image horizontally */
+    top: 10%; /* Adjust this value to move the image up */
+    transform: translate(-50%, -90%);
+    width: 600px; /* Adjust the width as per your requirement */
+    height: auto;
+    border-radius: 70%;
+    top: 100%;
+}
+
+.right-image {
+    position: absolute;
+    margin-top: 320px;
+    top: 10%;
+    right: 10%; /* Adjust this value to position the image horizontally */
+    transform: translate(50%, -50%);
+    width: 600px; /* Adjust the width as per your requirement */
+    height: auto;
+    border-radius: 4%;
+    margin-right: 200px;
+    /* For arcing the image */
+    /*transform: rotate(-20deg);*/
+    /* For browsers compatibility */
+    transform-origin: top right;
+}
+
+.next-image {
+    position: absolute;
+    margin-top: 700px;
+    top: 10%;
+    right: 10%; /* Adjust this value to position the image horizontally */
+    transform: translate(50%, -50%);
+    width: 1100px; /* Adjust the width as per your requirement */
+    height: auto;
+    border-radius: 4%;
+    margin-right: 500px;
+    padding-bottom: 150px;
+    /* For arcing the image */
+    /*transform: rotate(-20deg);*/
+    /* For browsers compatibility */
+    transform-origin: top right;
+}
+
+.next-image2 {
+    position: absolute;
+    margin-top: 700px;
+    top: 10%;
+    right: 10%; /* Adjust this value to position the image horizontally */
+    transform: translate(50%, -50%);
+    width: 1000px; /* Adjust the width as per your requirement */
+    height: auto;
+    border-radius: 4%;
+    margin-right: 500px;
+    padding-bottom: 150px;
+    /* For arcing the image */
+    /*transform: rotate(-20deg);*/
+    /* For browsers compatibility */
+    transform-origin: top right;
+}
+
+

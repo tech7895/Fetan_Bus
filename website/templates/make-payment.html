@@ -1,0 +1,30 @@
+{% extends 'base2.html' %}
+
+{% block title %}Make Payment{% endblock %}
+
+{% block body %}
+<h2 class="titles">Make Payment</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            {% for image in images%}
+            <div class="payment-preview">
+                <img src="{{ image.bank_logo }}" alt="Payment Icon">  <!-- Assuming payment_method corresponds to the filename of the payment icon -->
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-md-6">
+            <div class="payment-details">
+                <h3>Payment Details</h3>
+                <p>Number of Seats: {{ num_seats }}</p>
+                <p>Total Amount: {{ total_amount }} Birr</p>
+                <p>Charge (5%): {{ charge }} Birr</p>
+                <p>Grand Total Cost: {{ total_amount + charge }} Birr</p>
+                <button class="btn btn-primary">Pay Now</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="../static/css/payment_options.css">
+{% endblock %}

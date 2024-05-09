@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="container">
+    <h1>Choose Your Route</h1>
+    <form action="{{ url_for('views.available') }}" method="POST">
+        {{ form.hidden_tag() }}
+        <label for="departure">Departure:</label>
+        {{ form.departure(class="form-control", id="departure") }}
+        <label for="destination">Destination:</label>
+        {{ form.destination(class="form-control", id="destination") }}
+        <label class="date2" for="departure_date">Departure Date:</label>
+        {{ form.departure_date(class="form-control", id="departure_date") }}
+        {{ form.submit() }}
+    </form>
+</div>
+
+<link rel="stylesheet" href="../static/css/find.css">
+{% endblock %}

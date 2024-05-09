@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% if title %}
+    <title>Fetan Bus - {{ title }}</title>
+    {% else %}
+    <title>Fetan Bus</title>
+    {% endif %}
+    <link rel="stylesheet" href="static/css/common.css">
+</head>
+<body style="background-color: rgb(0, 100, 100);">
+    <header>
+        <div id="header_logo">
+            <a href="{{ url_for('views.home') }}">
+                <img src="static/images/logo.png" alt="Logo">
+            </a>
+        </div>
+        <div id="header_links">
+            <a class="link3" href="{{ url_for('views.about') }}">About Us</a>
+            {% if current_user.is_authenticated %}
+            
+            <a class="link2" href="/profile/{{ current_user.id }}">Profile <i></i></a>
+   
+            <a class="link2" href="{{ url_for('auth.log_out') }}">Logout</a>
+            {% else %}
+                <a class="link" href="{{ url_for('auth.login') }}">Login</a>
+                <a class="link" href="{{ url_for('auth.signup') }}">Register</a>
+            {% endif %}   
+        </div>
+        <h1 class="moving-text">Your best travel assistant !</h1>
+    </header>
+    
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category}}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </div>
+    <footer class="footer">
+        <a href="https://github.com/tech7895" style="color: white;">Fetan</a> | <span>
+          <i class="fa-sharp fa-regular fa-copyright"></i></span> 2024 All rights reserved
+        </footer>
+</body>
+</html>

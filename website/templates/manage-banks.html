@@ -1,0 +1,52 @@
+{% extends 'base2.html' %}
+
+{% block title %} Manage Routes {% endblock %}
+
+
+{% block body %}
+
+{% if fields | length < 1 %}
+<br>
+<h3 style="color: yellow;">No Buses scheduled</h3>
+
+{% else %}
+
+<table class="table table-hov">
+    <thead>
+        <tr class="hover-row">
+            <th scope="col">ID</th>
+            <th scope="col">Bank Name</th>
+            <th scope="col">Bank Logo</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for field in fields %}
+
+        <tr class="hover-row">
+            <th scope="row">{{ field.id }}</th>
+            <td>{{ field.bank_name }}</td>
+            <td>
+                <img src="{{ field.bank_logo }}" alt="" style="max-height: 50px; max-width: 70px; border-radius: 2px;">
+            </td>
+           
+
+            <td>
+                <a href="/update-field/{{ field.id }}" class="btn btn-primary">Update</a>
+                <a href="/delete-field/{{ field.id }}" class="btn btn-primary2">Delete</a>
+            </td>
+             
+
+        </tr>
+
+
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% endif %}
+
+<link rel="stylesheet" href="../static/css/common.css">
+{% endblock %}

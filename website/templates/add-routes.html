@@ -1,0 +1,45 @@
+{% extends 'base2.html' %}
+
+{% block title %} Add Routes{% endblock %}
+
+
+{% block body %}
+
+<table class="table table-hov">
+    <thead>
+        <tr class="hover-row">
+            <th scope="col">Departure</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Bus Type</th>
+            
+            <th scope="col">Departure Date</th>
+            <th scope="col">Departure time</th>
+            <th scope="col">Arrival Time</th>
+            <th scope="col">Price (Birr)</th>
+            <th scope="col">Bus Photo</th>
+           <th scope="col">Add</th> 
+
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <form action="" method="POST" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+
+                <td>{{ form.departure }}</td>
+                <td>{{ form.destination }}</td>
+                <td>{{ form.bus_name }}</td>
+                <td>{{ form.departure_date }}</td>
+                <td><input type="text" id="departure_time" name="departure_time"></td>
+                <td><input type="text" id="arrival_time" name="arrival_time"></td>
+                <td>{{ form.price}}</td>
+                <td>{{ form.bus_picture }}</td>
+                <td>{{ form.add_bus() }}</td>
+            </form>
+        </tr>
+    </tbody>
+</table>
+
+
+{% endblock %}

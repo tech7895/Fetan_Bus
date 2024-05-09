@@ -1,0 +1,124 @@
+.seat-input {
+    display: none;
+    
+}
+.titles {
+    color: rgb(255, 141, 255);
+    margin-left: 100px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.titles2 {
+    color: rgb(231, 177, 0);
+    margin-left: 100px;
+    background-color: #424242;
+    padding: 10px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    text-align: center;
+    border-radius: 7px;
+}
+.seat-label {
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 60px;
+    background-color: #dcdf4b; /* Yellow-green color */
+    border: 3px solid #8eeb23;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2b2b2b;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border-radius: 7px;
+}
+
+.seat-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.seat-input:checked + .seat-label {
+    background-color: #ff8800; /* Orange color when seat is selected */
+}
+
+.selected {
+    background-color: #FFA500 !important; /* Orange color when seat is selected */
+}
+
+
+.selected-seats {
+    border: 1px solid #ccc;
+    width: fit-content;
+    padding: 30px;
+    padding-right: 50px;
+}
+
+.selected-seats table th,
+.selected-seats table td {
+    text-align: center;
+    
+}
+
+.selected-seats table {
+    background-color: #1decb8;
+    background-size: auto;
+
+}
+.table {
+    width: max-content;
+}
+
+.selected-seats button {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    align-items: center;
+    color: yellow;
+}
+.tit1 {
+    color: #fbff0b;
+}
+
+.btn.btn-primary {
+    background-color: #dfbe05; /* New primary color */
+    border-color: #007bff; /* Border color */
+
+    color: white;
+    /* Add any other styling you want */
+}
+.btn.btn-primary:hover {
+    background-color: #057440;
+}
+
+/* Adjusted column widths */
+.col-md-8 {
+    width: 16.66667%; /* 8 out of 12 columns */
+}
+
+.col-md-4 {
+    width: 73.33333%; /* 4 out of 12 columns */
+}
+.col-md-3 {
+    width: 15%; /* 4 out of 12 columns */
+
+}
+
+.col-md-31 {
+    width: 25%; /* 4 out of 12 columns */
+    color: #baf8bd;
+    
+
+}
+.col-md-311 {
+    width: 25%; /* 4 out of 12 columns */
+    color: #baf8bd;
+
+}
+.table {
+    color: #353535;
+}

@@ -1,0 +1,56 @@
+{% extends 'base2.html' %}
+
+{% block title %} Add Shop Items {% endblock %}
+
+
+{% block body %}
+
+<table class="table table-hover">
+    <thead>
+        <tr class="hover-row">
+            <th scope="col">Field</th>
+            <th scope="col">Input</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Departure</td>
+            <td>{{ form.departure }}</td>
+        </tr>
+        <tr>
+            <td>Destination</td>
+            <td>{{ form.destination }}</td>
+        </tr>
+        <tr>
+            <td>Bus Type</td>
+            <td>{{ form.bus_name }}</td>
+        </tr>
+        <tr>
+            <td>Bus Photo</td>
+            <td>{{ form.bus_picture }}</td>
+        </tr>
+        <tr>
+            <td>Departure Date</td>
+            <td>{{ form.departure_date }}</td>
+        </tr>
+        <tr>
+            <td>Departure time</td>
+            <td><input type="text" id="departure_time" name="departure_time"></td>
+        </tr>
+        <tr>
+            <td>Arrival Time</td>
+            <td><input type="text" id="arrival_time" name="arrival_time"></td>
+        </tr>
+        <tr>
+            <td>Price (Birr)</td>
+            <td>{{ form.price}}</td>
+        </tr>
+        <tr>
+            <td>Add Bus</td>
+            <td>{{ form.add_bus() }}</td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}
