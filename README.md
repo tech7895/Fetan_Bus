@@ -9,7 +9,7 @@ The whole backend is coded in core PHP and MySql.
 ## Technologies
 * Python
 * Flask
-* Sqlalchemy/Sqlite
+* Sqlite3
 * Javascript
 * HTML
 * CSS
@@ -22,11 +22,11 @@ The whole backend is coded in core PHP and MySql.
 * Can print the ticket with all passenger and bus details already set.
 * Administrators can manage routes and bank systems
 ## Installation
-* Upload fetan_bus to the directory of your choice.
+* Create account on https://fetan.pythonanywhere.com/ and upload fetan_bus
 * Create Sqlite Db file to your database software 
-* Configure connection between your database and server.
-* Navigate to the installation in your browser ( E.g : https://biruk12.pythonanywhere.com/ )
+* Configure connection between your application and the server.
+* Navigate to the installation in your browser ( E.g : https://fetan.pythonanywhere.com/ )
 * Done :)
 ## Authors
-
+Biruk Moltot
 https://github.com/tech7895
