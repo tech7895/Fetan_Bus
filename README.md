@@ -22,7 +22,7 @@ The whole backend is coded in core PHP and MySql.
 * Can print the ticket with all passenger and bus details already set.
 * Administrators can manage routes and bank systems
 ## Installation
-* Create account on https://fetan.pythonanywhere.com/ and upload fetan_bus
+* Create account on https://pythonanywhere.com/ and upload fetan_bus (You can also use other websites that can host flask web applications).
 * Create Sqlite Db file to your database software 
 * Configure connection between your application and the server.
 * Navigate to the installation in your browser ( E.g : https://fetan.pythonanywhere.com/ )
