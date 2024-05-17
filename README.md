@@ -5,7 +5,6 @@ FetanBus - Book Bus Travels
 
 An online bus ticket booking system with a login system, validated 
 payment form and ticket pdf print. 
-The whole backend is coded in core PHP and MySql.
 ## Technologies
 * Python
 * Flask
