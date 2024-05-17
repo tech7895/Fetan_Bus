@@ -20,6 +20,7 @@
             <th scope="col">Departure</th>
             <th scope="col">Destination</th>
             <th scope="col">Bus Type</th>
+            <th scope="col">Side Number</th>
             <th scope="col"></th>
             <th scope="col">Departure Date</th>
             <th scope="col">Departure Time</th>
@@ -40,6 +41,7 @@
             <td>{{ item.departure }}</td>
             <td>{{ item.destination }}</td>
             <td>{{ item.bus_name }}</td>
+            <td>{{ item.side_number }}</td>
         <td>
             <img src="{{ item.bus_picture }}" alt="" style="max-height: 80px; border-radius:10px; max-width: 120px; border-radius: 2px;">
         </td>
@@ -57,5 +59,21 @@
     </tbody>
 </table>
 {% endif %}
+<script>
+// available.html (or separate script file)
+document.addEventListener('DOMContentLoaded', function() {
+    const busSelectionForm = document.getElementById('busSelectionForm');
+
+    busSelectionForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission behavior
+
+        const selectedBusId = document.getElementById('selectedBus').value;
+
+        // Redirect to the payment page with the selected bus_id
+        window.location.href = `/make-payment/${selectedBusId}`;
+    });
+});
+</script>
+
 <link rel="stylesheet" href="/static/css/common.css">
 {% endblock %}

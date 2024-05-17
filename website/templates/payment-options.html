@@ -13,16 +13,13 @@
                 {% for field in fields %}
                 <div class="border">
                     <div class="payment-option">
-                        <img src="{{ field.bank_logo }}" alt="{{ field.bank_name }} Logo" class="max-size"></img><br>   
-            
-                        <button class="btn btn-primary pay-btn" data-payment-method="{{ field.id }}" data-bus-id="{{ bus.id }}">Choose</button>
+                        <img src="../static/images/{{ field.bank_name|lower() }}.png" alt="{{ field.bank_name }} Logo" class="max-size"></img><br>
+                        <!-- Pass bus_id and bank_name as data attributes -->
+                        <button class="btn btn-primary pay-btn" data-payment-method="{{ field.id }}" data-bus-id="{{ bus.id }}" data-bank-name="{{ field.bank_name }}">Choose</button>
                     </div>
-                    
                 </div>
                 {% endfor %}
-               
             </div>
-            
         </div>
     </div>
 </div>
@@ -33,15 +30,17 @@
         payButtons.forEach(function (button) {
             button.addEventListener('click', function () {
                 const paymentMethod = button.getAttribute('data-payment-method');
-                const bus_id = button.getAttribute('data-bus-id');
-                redirectToPayment(bus_id, paymentMethod); // Call the redirectToPayment function with busId and paymentMethod
+                const busId = button.getAttribute('data-bus-id');
+                const bankName = button.getAttribute('data-bank-name'); // Get the bank name from the button's data attribute
+                redirectToPayment(busId, paymentMethod, bankName); // Call the redirectToPayment function with busId, paymentMethod, and bankName
             });
         });
     });
 
-    function redirectToPayment(bus_id, paymentMethod) {
-        window.location.href = `/make-payment/${bus_id}?payment_id=${paymentMethod}`;  // Pass payment option ID in the URL
+    function redirectToPayment(busId, paymentMethod, bankName) {
+        window.location.href = `/make-payment/${busId}?payment_id=${paymentMethod}&bank_name=${bankName}`;  // Pass payment option ID, bus ID, and bank name in the URL
     }
 </script>
+
 <link rel="stylesheet" href="../static/css/payment_options.css">
 {% endblock %}

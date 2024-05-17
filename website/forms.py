@@ -1,8 +1,9 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, IntegerField, FloatField, PasswordField, EmailField, BooleanField, DateField, SubmitField, SelectField
-from wtforms.validators import DataRequired, length, NumberRange
+from wtforms import StringField, IntegerField, FloatField, SelectField, PasswordField, EmailField, BooleanField, DateField, SubmitField, SelectField
+from wtforms.validators import DataRequired, length, NumberRange, Email, Length
 from flask_wtf.file import FileField, FileRequired
 from flask_login import current_user
+from .models import Bus
 
 
 class SignUpForm(FlaskForm):
@@ -24,18 +25,22 @@ class PasswordChangeForm(FlaskForm):
     new_password = PasswordField('New Password', validators=[DataRequired(), length(min=6)])
     confirm_new_password = PasswordField('Confirm New Password', validators=[DataRequired(), length(min=6)])
     change_password = SubmitField('Change Password')
+    
+class EmailChangeForm(FlaskForm):
+    new_email = StringField('New Email', validators=[DataRequired(), Email(), Length(min=6)])
+    change_email = SubmitField('Change Email')
 
 
 class AvailableBusesForm(FlaskForm):
     departure = StringField('Departure', validators=[DataRequired()])
     destination = StringField('Destination', validators=[DataRequired()])
     bus_name = StringField('Bus Name', validators=[DataRequired()])
+    side_number = StringField('Side number', validators=[DataRequired()])
     bus_picture = FileField('Bus Photo', validators=[DataRequired()])
     departure_date = DateField('Departure Date', format='%Y-%m-%d', validators=[DataRequired()])
     departure_time = StringField('Departure Time', validators=[DataRequired()])
     arrival_time = StringField('Arrival Time', validators=[DataRequired()])
     price = StringField('Price', validators=[DataRequired()])
-    flash_sale = BooleanField('Flash Sale')
 
     submit = SubmitField('Search Bus')
     add_bus = SubmitField('Add Bus')

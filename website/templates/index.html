@@ -21,11 +21,20 @@
         </div>
 
         <p class="para3">Reserve your favorite seat</p>
-       
+        <div class="images-container"> 
+            <img src="../static/images/back5.png" class="next-image2" alt="Right Image">
+        </div>
+        <p class="para4">Make <br>secured <br>online <br>transactions</p>
             
         </div>
     </div>
-    
+    <p class="para5"><br><br>
+        {% if current_user.is_authenticated %}
+        <a class="link5" href="{{ url_for('views.find_bus') }}">Join Now</a>
+        {% else %}
+        <a class="link5" href="{{ url_for('auth.signup') }}">Join Now</a>  
+        {% endif %}
+    </p>
     
    
     <!--

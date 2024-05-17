@@ -2,40 +2,36 @@
 
 {% block title %} My Profile {% endblock %}
 
-
 {% block body %}
 
-<div class="container my-5">
+<div class="container my-5" style="background-color: white; border-radius: 18px; margin-bottom: 15px; padding: 15px">
     <div class="row">
         <img class="rounded-circle img" src="{{ image_file }}">
-        <h3 style="color: white;">Hi  <span>{{ customer.username }}</span></h3>
-
+        <h3 style="color: green;">Hi  <span>{{ customer.username }}</span></h3>
+        
         <div class="col-sm-2 border-end" style="margin-top: 20px;">
         
             <ul class="list-unstyled">
-                <li class="d-grid"><a href="{{ url_for('views.find_bus') }}" class="btn btn-primary" style="margin-top: 5px; background: rgb(230, 180, 20);">Find your Bus</a></li>
+               
+                <li class="d-grid"><a href="/change-email/{{ customer.id }}" class="btn btn-primary" style="margin-top: 5px;">Change email</a></li>
                 <li class="d-grid"><a href="/change-password/{{ customer.id }}" class="btn btn-primary" style="margin-top: 5px;">Change Password</a></li>
-                <li class="d-grid"><a href="/change-password/{{ customer.id }}" class="btn btn-primary" style="margin-top: 5px;">Choose Your Route</a></li>
-
             </ul>
-        
+            <li class="d-grid"><a href="{{ url_for('views.find_bus') }}" class="btn btn-primary" style="margin-top: 5px; margin-bottom: 0px;background: rgb(114, 41, 186);">Get your Bus</a></li>
+            <li class="d-grid"><a href="{{ url_for('views.your_bookings') }}" class="btn btn-primary" style="margin-top: 5px; margin-bottom: 50px;background: rgb(114, 41, 186);">your bookings</a></li>
         </div>
         <div class="content-section">
             
         </div>
-        <div class="col-sm-5 offset-sm-1" style="background-color: white; border-radius: 18px; margin-top: 20px;">
-            <div class="row">
 
+        <div class="col-sm-5 offset-sm-1" style="border-radius: 18px; padding: 10px; border-width:50px; margin-top: -350px; margin-left: 500px">
+            <div class="row">
                 <div class="col-sm-8">
                     <div class="card m-2">
-
                         <h3>{{ customer.username }}</h3>
                         <p>Email: {{ customer.email }}</p>
                     </div>
                 </div>
-
             </div>
-        
         </div>
     </div>
 </div>

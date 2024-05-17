@@ -4,14 +4,6 @@
 
 
 {% block body %}
- <!-- Flash message -->
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            {% for category, message in messages %}
-                <div style="background-color: #f6ff97; padding: 10px;">{{ message }}</div>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
 
 {% if fields | length < 1 %}
 <br>
@@ -23,18 +15,14 @@
     <thead>
         <tr class="hover-row">
             <th scope="col">ID</th>
-            <th scope="col">Date Added</th>
             <th scope="col">Departure</th>
             <th scope="col">Destination</th>
             <th scope="col">Bus Name</th>
-            <th scope="col">Side Number</th>
-            <th scope="col"></th>
             <th scope="col">Departure Date</th>
             <th scope="col">Departure time</th>
             <th scope="col">Arrival Time</th>
-            <th scope="col">Price</th>
-            <th scope="col"></th>
-            <th scope="col"></th>
+            <th scope="col">booked seats</th>
+            <th scope="col">Remaining seats</th>
         </tr>
     </thead>
 
@@ -47,8 +35,6 @@
             <td>{{ field.departure }}</td>
             <td>{{ field.destination }}</td>
             <td>{{ field.bus_name }}</td>
-            <td>{{ field.side_number }}</td>
-            
             <td>
                 <img src="{{ field.bus_picture }}" alt="" style="max-height: 50px; max-width: 70px; border-radius: 2px;">
             </td>
@@ -56,12 +42,6 @@
             <td>{{ field.departure_time }}</td>
             <td>{{ field.arrival_time}}</td>
             <td>{{ field.price}}</td>           
-
-
-            <td>
-                <a href="/update-field/{{ field.id }}" class="btn btn-primary">Update</a>
-                <a href="/delete-field/{{ field.id }}" class="btn btn-primary2">Delete</a>
-            </td>
             
 
         </tr>

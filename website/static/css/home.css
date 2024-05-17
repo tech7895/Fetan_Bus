@@ -65,6 +65,34 @@
 
 }
 
+.para4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 500px;
+    margin-left: 900px;
+    font-size: 3.5rem;
+    z-index: 91;
+    color: rgb(252, 203, 40);
+    font-family: 'Dancing Script', cursive;
+
+}
+.para5{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    margin-left: 400px;
+    font-size: 3.5rem;
+    z-index: 91;
+    color: rgb(252, 203, 40);
+    font-family: 'Dancing Script', cursive;
+
+}
+
+
 
 body {
 	margin:0px;
@@ -102,6 +130,36 @@ body {
 
 .link1:hover {
     background-color: rgb(242, 255, 58);
+    color: rgb(3, 112, 39);
+}
+
+
+.link5 {
+    height: 60px;
+    width: 300px; /* Adjusted width */
+    color: rgb(248, 248, 248);
+    background-color: rgb(248, 62, 6);
+    background-size: 100px;
+    border-radius: 50%;
+    line-height: 60px; /* Adjusted line-height */
+    display: inline-block; /* Allow for padding and width to work */
+    text-align: center;
+    animation: blink 1s infinite; /* Apply the animation */
+    animation-direction: alternate-reverse;
+    font-size: 2.7rem;
+    z-index: 200;
+    font-weight: bold;
+    margin: -20px 640px;
+    margin-bottom: 300px;
+    padding: 20px 44px;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+
+.link5:hover {
+    background-color: rgb(253, 34, 34);
     color: rgb(3, 112, 39);
 }
 
@@ -160,19 +218,17 @@ body {
 
 .next-image2 {
     position: absolute;
-    margin-top: 700px;
+    margin-top: 1000px;
     top: 10%;
     right: 10%; /* Adjust this value to position the image horizontally */
     transform: translate(50%, -50%);
-    width: 1000px; /* Adjust the width as per your requirement */
+    width: 900px; /* Adjust the width as per your requirement */
     height: auto;
     border-radius: 4%;
-    margin-right: 500px;
+    margin-right: 700px;
     padding-bottom: 150px;
     /* For arcing the image */
     /*transform: rotate(-20deg);*/
     /* For browsers compatibility */
     transform-origin: top right;
 }
-
-

@@ -28,15 +28,25 @@
     border-radius: 3px;
 }
 .titles {
-    color: yellow;
-    background-color: rgb(72, 122, 72);
+    color: rgb(255, 255, 255);
     padding: 5px;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-left: 50px;
 }
 
 .col-md-6 {
     border: 20px;
     border-color: yellow;
-    background-color: rgb(236, 236, 165);
+    background-color: rgb(71, 80, 69);
+    max-width: 320px;
     padding: 10px;
+    color: white;
     border-radius: 4px;
+}
+.max-size2 {
+    width: 170px;
+    height: 150px;
+    border-radius: 7%;
+    z-index: 100;
 }

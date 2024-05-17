@@ -1,0 +1,69 @@
+/* Custom styles for the add route form */
+
+/* Container styles */
+.container {
+    max-width: 900px; /* Adjust maximum width of the container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding inside the container */
+    border-radius: 10px;
+    background-color: aliceblue;
+}
+
+/* Flash message styles */
+.flash-message {
+    position: absolute; /* Set flash message position to absolute */
+    top: 10px; /* Position flash message at the top of the container */
+    left: 50%; /* Center flash message horizontally */
+    transform: translateX(-50%); /* Adjust horizontal centering */
+    padding: 10px; /* Add padding to flash message */
+    background-color: #f6ff97; /* Set background color for flash message */
+    color: #000; /* Set text color for flash message */
+    border-radius: 5px; /* Add rounded corners to flash message */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow effect to flash message */
+    z-index: 1000; /* Ensure flash message appears above other content */
+}
+
+/* Table styles */
+.table-container {
+    margin-top: 20px; /* Add top margin for spacing */
+    border-radius: 10px;
+    
+}
+
+.table-container table {
+    width: 100%; /* Table fills the container width */
+    border-collapse: collapse; /* Remove space between table cells */
+    border-radius: 10px;
+}
+
+.table-container th,
+.table-container td {
+    padding: 10px; /* Add padding for table cells */
+    text-align: left; /* Align text to the left within cells */
+}
+
+.table-container th {
+    width: 40%; /* Set width for table headers */
+    font-weight: bold; /* Make table headers bold */
+}
+
+body {
+    /* Set background image with linear gradient overlay */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/background.jpg');
+    background-size: cover; /* Ensure the background image covers the entire viewport */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; /* Keep the background fixed while scrolling */
+    height: 100vh; /* Set the body height to full viewport height */
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+    display: flex; /* Use flexbox for vertical centering */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+/* Media query for smaller screens (optional) */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+}

@@ -1,0 +1,45 @@
+{% extends 'base2.html' %}
+
+{% block title %} My Profile {% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<div class="container my-5">
+    <div class="row">
+        <h3>Welcome to the Admin Page</h3>
+        
+        <div class="col-sm-5 offset-sm-1">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="card m-2">
+                        <li class="d-grid"><a href="{{ url_for('admin.add_routes') }}" class="btn btn-primary">Add bus schedules</a></li>
+                        <li class="d-grid"><a href="{{ url_for('admin.manage_routes') }}" class="btn btn-primary">Manage bus schedules</a></li>
+                        <li class="d-grid"><a href="{{ url_for('admin.add_payment') }}" class="btn btn-primary">Add Payment Options</a></li>
+                        <li class="d-grid"><a href="{{ url_for('admin.manage_banks') }}" class="btn btn-primary">Manage Payment Options</a></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second part -->
+        <div class="col-sm-5">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="card m-2">
+                        <li class="d-grid"><a href="{{ url_for('admin.add_routes') }}" class="btn btn-primary">Show Booking info</a></li>
+                        <li class="d-grid"><a href="{{ url_for('admin.manage_routes') }}" class="btn btn-primary">Customers info</a></li>
+                        <li class="d-grid"><a href="{{ url_for('admin.add_payment') }}" class="btn btn-primary">Analytics</a></li>
+                        <li class="d-grid"><a href="{{ url_for('admin.manage_banks') }}" class="btn btn-primary">Finance</a></li>
+                        <li class="d-grid"><a href="{{ url_for('admin.manage_banks') }}" class="btn btn-primary">More</a></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+{% endblock %}

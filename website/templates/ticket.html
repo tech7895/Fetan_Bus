@@ -1,0 +1,46 @@
+{% extends 'base2.html' %}
+
+{% block title %}Ticket{% endblock %}
+
+{% block body %}
+<div>
+    <p class="head1">Your booking has been confirmed, please get your ticket.</p>
+</div>
+
+<div class="grid-container">
+    <div class="images-container"> 
+        <img src="../static/images/logo.png" class="next-image2" alt="Right Image">
+    </div>
+    <div class="grid-item header">
+        <h2 class="titles rotated">F E T A N   B U S   T I C K E T <br>
+        <p class="titles rotated2"><strong>Bus number:
+        <p class="titles rotated3">{{ bus.side_number }}</strong></p>
+    </p>
+    </h2>
+    </div>
+    <div class="grid-item">
+        <p><strong>Bus Type:</strong><br> {{ bus.bus_name }}</p>
+        <p><strong>Seat Number:</strong><br> {{ seat_number }}</p>
+        <p><strong>Departure:</strong><br> {{ bus.departure }}</p>
+        <p><strong>Destination:</strong><br> {{ bus.destination }}</p>
+    </div>
+    <div class="grid-item">
+        <p><strong>Departure Date:</strong><br> {{ bus.departure_date }}</p>
+        <p><strong>Departure Time:</strong><br> {{ bus.departure_time }}</p>
+        <p><strong>Arrival Time:</strong><br> {{ bus.arrival_time }}</p>
+        <p><strong>Customer Name:</strong><br> {{ user_name }}</p>
+        
+    </div>
+    <hr>
+    <div id="ticket">
+        <!-- Ticket details will be dynamically added here -->
+    </div>
+    
+</div>
+<div id="download-options">
+    <button class="btn btn-primary" onclick="downloadTicket('pdf')">Download as PDF</button>
+    <button class="btn btn-primary" onclick="downloadTicket('jpg')">Download as JPG</button>
+</div>
+
+<link rel="stylesheet" href="../static/css/ticket.css">
+{% endblock %}

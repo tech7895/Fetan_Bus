@@ -33,7 +33,7 @@ def create_app():
     from .views import views
     from .auth import auth
     from .admin import admin
-    from .models import Customer, Bus, Seat, Payment
+    from .models import Customer, Bus, Payment, Ticket
     
     app.register_blueprint(views, url_prefix='/')  # = localhost:5000/about-page
     app.register_blueprint(auth, url_prefix='/')

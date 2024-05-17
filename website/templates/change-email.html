@@ -1,0 +1,24 @@
+{% extends 'base2.html' %}
+
+{% block title %} Change Email {% endblock %}
+
+{% block body %}
+
+<div class="col-sm-5 offset-sm-3" style="background-color: white; border-radius: 10px; margin-top: 20px;">
+
+    <form style="padding: 30px;" method="POST">
+    
+        {{ form.hidden_tag() }}
+
+        <div class="mb-3">
+            <label for="exampleInputEmail" class="form-label"> {{ form.new_email.label }}</label>
+            {{ form.new_email }}
+        </div>
+
+        {{ form.change_email }}
+    
+    </form>
+
+</div>
+
+{% endblock %}

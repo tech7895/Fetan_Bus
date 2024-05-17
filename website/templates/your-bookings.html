@@ -1,0 +1,35 @@
+{% extends 'base2.html' %}
+
+{% block title %}Your Bookings{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/your-bookings.css') }}">
+{% endblock %}
+
+{% block body %}
+<div>
+    <h2 class="h2">Your Bookings</h2>
+    <div class="clearfix">
+        {% if bookings %}
+            {% for bus in bookings %}
+                <div class="booking-column">
+                    <div class="booking-details">
+                        <h3 class="h3">{{ bus.bus_name }}</h3>
+                        <p><strong>Bus Number:</strong> {{ bus.side_number }}</p>
+                        <p><strong>Departure:</strong> {{ bus.departure }}</p>
+                        <p><strong>Destination:</strong> {{ bus.destination }}</p>
+                        <p><strong>Departure Date:</strong> {{ bus.departure_date }}</p>
+                        <p><strong>Departure Time:</strong> {{ bus.departure_time }}</p>
+                        <p><strong>Arrival Time:</strong> {{ bus.arrival_time }}</p>
+                        <p><strong>Seat Number:</strong> {{ bus.seat_number }}</p>
+                        <p><strong>Booking Date:</strong> {{ bus.booking_date }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No bookings found.</p>
+        {% endif %}
+    </div>
+</div>
+<link rel="stylesheet" href="../static/css/your-bookings.css">
+{% endblock %}

@@ -1,0 +1,39 @@
+/* static/css/styles.css */
+
+.container {
+    background-color: white;
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('../images/background.jpg');
+    border-radius: 18px;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+.rounded-circle {
+    border-radius: 50%;
+}
+
+h3 {
+    color: rgb(223, 255, 223);
+    font-weight: bold;
+}
+
+.offset-sm-1 {
+    margin-left: 100px;
+}
+
+.card {
+    border-radius: 18px;
+    border-width: 15px;
+    padding: 10px;
+}
+
+.card .btn {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    background: rgb(69, 133, 62);
+    font-size: 1.5rem;
+}
+
+.card .btn:hover {
+    background-color: rgb(133, 201, 43);
+}

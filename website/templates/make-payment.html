@@ -3,28 +3,73 @@
 {% block title %}Make Payment{% endblock %}
 
 {% block body %}
-<h2 class="titles">Make Payment</h2>
+<h2 class="titles">Make Your Payment with {{ bank_name }}</h2>
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            {% for image in images%}
             <div class="payment-preview">
-                <img src="{{ image.bank_logo }}" alt="Payment Icon">  <!-- Assuming payment_method corresponds to the filename of the payment icon -->
+                <img class="max-size2" src="../static/images/{{ bank_name|lower() }}.png" alt="{{ bank_name }} Logo">
             </div>
-            {% endfor %}
         </div>
         <div class="col-md-6">
             <div class="payment-details">
                 <h3>Payment Details</h3>
                 <p>Number of Seats: {{ num_seats }}</p>
                 <p>Total Amount: {{ total_amount }} Birr</p>
-                <p>Charge (5%): {{ charge }} Birr</p>
-                <p>Grand Total Cost: {{ total_amount + charge }} Birr</p>
-                <button class="btn btn-primary">Pay Now</button>
+                <p>Service charge (5%): {{ charge }} Birr</p>
+                <p>Grand Total: {{ total_amount + charge }} Birr</p>
+                <button id="payButton" class="btn btn-primary pay-btn" data-bus-id="{{ bus_id }}">Pay</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap modal for confirmation -->
+<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmModalLabel">Confirm Payment</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Please confirm to continue
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" id="confirmButton">Confirm</button>
             </div>
         </div>
     </div>
 </div>
 
 <link rel="stylesheet" href="../static/css/payment_options.css">
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the Pay button by its ID
+    const payButton = document.getElementById('payButton');
+    
+    // Get the Confirm button from the modal
+    const confirmButton = document.getElementById('confirmButton');
+    
+    // Add a click event listener to the Pay button
+    payButton.addEventListener('click', function() {
+        // Show the modal
+        const confirmModal = new bootstrap.Modal(document.getElementById('confirmModal'));
+        confirmModal.show();
+    });
+    
+    // Add a click event listener to the Confirm button
+    confirmButton.addEventListener('click', function() {
+        // Retrieve data attributes from the Pay button
+        const busId = payButton.getAttribute('data-bus-id'); // Retrieve the bus_id
+
+        // Redirect to the ticket page with the bus_id parameter
+        const redirectUrl = `/ticket/${busId}`;
+        window.location.href = redirectUrl;
+    });
+});
+</script>
+
 {% endblock %}
