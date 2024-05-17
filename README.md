@@ -1,10 +1,18 @@
 
 # Project Title
 
-FetanBus - Book Bus Travels
+**FetanBus**
 
-An online bus ticket booking system with a login system, validated 
-payment form and ticket pdf print. 
+**Fetan** is a sophisticated online platform designed to streamline the process of
+booking bus tickets for travelers. With an intuitive user interface and robust
+backend infrastructure, Fetan offers a convenient and efficient way for users to
+plan their journeys and secure seats on desired bus routes.
+At its core, Fetan aims to revolutionize the traditional bus ticketing experience by
+providing a seamless online solution accessible via web browsers and mobile
+devices. Whether planning a short commute or a long-distance trip, users can
+easily browse available routes, select preferred travel dates, and reserve seats
+with just a few clicks.
+
 ## Technologies
 * Python
 * Flask
