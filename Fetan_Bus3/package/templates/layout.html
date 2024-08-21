@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>FETAN BUS| {% block title %} {% endblock %}</title>
+          <!-- Font Awesome CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
+        <link rel="icon" href="{{ url_for('static', filename='images/icon.png') }}" type="image/png"> <!-- Updated for Flask's url_for function -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="flash-message {% if category == 'success' %}success{% elif category == 'danger' %}danger{% endif %}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}    
+    </head>
+    <body>
+        <header>
+            <a href="{{ url_for('views.index') }}"<div class="logo"></div></a>
+            <div class='moving-text'><h2>Your Best Travel Assistant</h2></div>
+            <div class="header-links">
+                {% if current_user.is_authenticated %}
+                <a class="header-links2" href="{{ url_for('auth.profile', customer_id=current_user.id) }}">Profile</a>
+
+                    <a class="header-links2" href="{{ url_for('auth.logout') }}">Logout</a>
+                {% else %}
+                    <a class="header-links3" href="{{ url_for('views.about') }}">About us</a>
+                    <a href="{{ url_for('auth.login') }}">Login</a>
+                    <a href="{{ url_for('auth.signup') }}">Sign up</a>
+                {% endif %}
+            </div>
+        </header>
+        
+        <div class="container">
+            {% block body %}
+            <!-- Content for each page will go here -->
+            {% endblock %}
+        </div>
+
+        <footer>
+            <a class="footer" href="https://github.com/tech7895" target="_blank" style="color: white;">Fetan</a> | <span>2024 All rights reserved</span>
+        </footer>
+
+        <script>
+            // JavaScript code for auto-hiding the flash message
+            const flashMessage = document.querySelector('.flash-message');
+            // Set a timeout to fade out the flash message after 3 seconds
+            setTimeout(() => {
+                if (flashMessage) {
+                    flashMessage.style.opacity = '0';
+                    flashMessage.style.visibility = 'hidden';
+                }
+            }, 5000);
+        </script>
+    </body>
+</html>

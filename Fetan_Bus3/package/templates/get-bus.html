@@ -1,0 +1,87 @@
+{% extends 'layout.html' %}
+
+{% block title %} Add Schedules {% endblock %}
+
+{% block body %}
+<div class="container">
+    <h4>Add bus schedules</h4>
+    
+    <form id="schedule-form" action="{{ url_for('admin.add_schedule') }}" method="POST">
+        <div class="mb-3">
+            <label for="bus_type" class="form-label">Select Bus Type</label>
+            <select class="form-select" id="bus_type" name="bus_type">
+                <option value="">Select Bus Type</option>
+            </select>
+        </div>
+        
+        <div class="mb-3">
+            <label for="side_number" class="form-label">Select Side Number</label>
+            <select class="form-select" id="side_number" name="side_number">
+                <option value="">Select Side Number</option>
+            </select>
+        </div>
+
+        <input type="hidden" name="bus_id" id="bus_id">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/add_admin.css') }}">
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const busTypeSelect = document.getElementById('bus_type');
+        const sideNumberSelect = document.getElementById('side_number');
+        const busIdInput = document.getElementById('bus_id');
+    
+        // Function to fetch and populate side numbers based on selected bus type
+        function populateSideNumbers(selectedBusType) {
+            fetch(`/get-side-numbers?bus_type=${selectedBusType}`)
+                .then(response => response.json())
+                .then(data => {
+                    sideNumberSelect.innerHTML = '<option value="">Select Side Number</option>';
+                    data.forEach(sideNumber => {
+                        const option = document.createElement('option');
+                        option.value = sideNumber.id;  // Ensure this is the bus ID
+                        option.textContent = sideNumber.number;  // Display the side number
+                        sideNumberSelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error fetching side numbers:', error));
+        }
+    
+        // Fetch bus data from the server and populate bus type dropdown
+        fetch('/get-bus-data')
+            .then(response => response.json())
+            .then(data => {
+                data.bus_types.forEach(busType => {
+                    const option = document.createElement('option');
+                    option.value = busType;
+                    option.textContent = busType;
+                    busTypeSelect.appendChild(option);
+                });
+            })
+            .catch(error => console.error('Error fetching bus data:', error));
+    
+        // Event listener for bus type dropdown change
+        busTypeSelect.addEventListener('change', () => {
+            const selectedBusType = busTypeSelect.value;
+            if (selectedBusType) {
+                populateSideNumbers(selectedBusType);
+            } else {
+                sideNumberSelect.innerHTML = '<option value="">Select Side Number</option>';
+            }
+        });
+    
+        // Update the hidden bus ID input field when the form is submitted
+        document.querySelector('form').addEventListener('submit', function(event) {
+            const selectedBusId = sideNumberSelect.value;
+            if (!selectedBusId) {
+                event.preventDefault();
+                alert('Please select a side number.');
+            } else {
+                busIdInput.value = selectedBusId;  // Set the value of the hidden input field to the selected bus ID
+            }
+        });
+    });
+</script>
+
+{% endblock %}

@@ -1,0 +1,126 @@
+/* Custom styles for the add route form */
+
+/* Container styles */
+.container {
+    max-width: 80%; /* Adjust maximum width of the container */
+    margin: 20px auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding inside the container */
+    border-radius: 10px;
+    background-color: aliceblue;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+
+.container h4 {
+    font-size: 1.5rem;
+}
+footer {
+    display: none;
+}
+
+/* Table styles */
+.table-container {
+    margin-top: 20px; /* Add top margin for spacing */
+    border-radius: 10px;
+    overflow: hidden; /* Ensure border radius is applied */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+
+.table-container table {
+    width: 100%; /* Table fills the container width */
+    border-collapse: collapse; /* Remove space between table cells */
+    border-radius: 10px;
+    background-color: white; /* Set table background color */
+}
+
+.table-container th,
+.table-container td {
+    padding: 10px; /* Add padding for table cells */
+    text-align: left; /* Align text to the left within cells */
+    border-bottom: 1px solid #ddd; /* Add a border to table cells */
+    color: rgb(35, 35, 48);
+}
+
+.table-container th {
+    font-weight: bold; /* Make table headers bold */
+    background-color: #f4f4f4; /* Add background color to table headers */
+}
+
+.table-container tr:hover {
+    background-color: #f1f1f1; /* Change background color on hover */
+}
+
+/* Input box styles */
+input[type="text"], input[type="number"], textarea {
+    width: 100%; /* Full width */
+    padding: 10px; /* Add padding */
+    margin: 5px 0 10px 0; /* Add margin */
+    display: inline-block; /* Default display */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+input[type="text"]:focus, input[type="number"]:focus, textarea:focus {
+    border-color: #4CAF50; /* Change border color on focus */
+    outline: none; /* Remove outline */
+}
+
+/* Button styles */
+input[type="submit"] {
+    background-color: #4CAF50; /* Set background color */
+    color: white; /* Set text color */
+    padding: 10px 20px; /* Add padding */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+    font-size: 16px; /* Increase font size */
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049; /* Darken background color on hover */
+}
+
+/* Media query for smaller screens (optional) */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+}
+
+/*********************************************/
+.btn {
+    /* Adjust button styles as needed */
+    padding: 12px 20px;
+    margin-right: 8px; /* Add margin between buttons */
+}
+
+.btn-primary {
+    background-color: rgb(230, 178, 9);
+    border: none;
+    padding: 7px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    
+}
+
+.btn-primary2 {
+    background-color: rgb(197, 85, 40);
+    color: white;
+    border: none;
+    padding: 7px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.button-space {
+    display: flex; /* Use flexbox */
+    /*justify-content: space-between; /* Ensure buttons are spaced evenly */
+    justify-content: space-around;
+}
+
+.button-space a {
+    margin-right: 10px; /* Adjust this value to increase or decrease the gap */
+}

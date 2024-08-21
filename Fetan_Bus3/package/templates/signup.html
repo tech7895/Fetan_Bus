@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="/static/images/icon.png" type="image/png">
+{% endblock %}
+
+{% block body %}
+    
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <h3>Create your Fetan <br>account</h3>
+    
+        <label for="username">Username</label>
+        {{ form.username(class="form-control", placeholder="Username") }}
+    
+        <label for="email">Email address</label>
+        {{ form.email(class="form-control", placeholder="Email address") }}
+    
+        <label for="password">Password</label>
+        {{ form.password1(class="form-control", placeholder="Password") }}
+    
+        <label for="password">Confirm Password</label>
+        {{ form.password2(class="form-control", placeholder="Confirm Password") }}
+    
+        {{ form.submit(class="button") }}
+    
+        <div class="sign">
+            <p><br>Already have an account?  
+            <a href="/login">Login</a></p>
+        </div>
+    </form>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}

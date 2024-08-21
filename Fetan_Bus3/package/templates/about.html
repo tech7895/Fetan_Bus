@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Online Bus Ticket Booking Platform</title>
+    <link rel="stylesheet" href="../static/css/about.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <button class="back-button" onclick="goToHomePage()">&#8249;</button> <!-- &#8249; is the HTML entity for a left arrow symbol -->
+        <h1>About Us</h1>
+        <p>Welcome to FETAN; our online bus ticket booking platform! We aim to provide you with a convenient and hassle-free way
+            to book bus tickets for your travels.</p>
+
+        <h2>Our Mission</h2>
+        <p>Our mission is to ease the bus ticket booking process and make it accessible to everyone. We strive to
+            offer a user-friendly platform that allows you to search for bus routes, compare prices, and book tickets
+            with ease.</p>
+
+        <h2>Why Choose Us?</h2>
+        <ul>
+            <li><strong>Convenience:</strong> Book your bus tickets anytime, anywhere, from the comfort of your home or
+                on the go.</li>
+            <li><strong>Wide Coverage:</strong> We partner with various bus operators to offer a wide range of routes
+                across different cities and regions.</li>
+            <li><strong>Secure Payments:</strong> Our platform ensures secure online transactions for your peace of
+                mind.</li>
+            <li><strong>Customer Support:</strong> Our dedicated customer support team is available to assist you with
+                any queries or concerns.</li>
+        </ul>
+
+        <h2>Contact Us</h2>
+        <p>If you have any questions or feedback, please feel free to contact us:</p>
+        <p>Contact person: Biruk Moltot</p>
+        <p>Email: coper5540@gmail.com</p>
+        <p>Phone: +251-953-962-429</p>
+        <a href="https://www.linkedin.com/in/biruk-tesfaye-a29220280/" style="color: white;">Linkedin</a> | <span>
+        <a href="https://github.com/tech7895/" style="color: white;">   Github</a>  <span>
+
+    </div>
+
+    <script>
+        function goToHomePage() {
+            window.location.href = href="{{ url_for('views.index') }}"; // Replace "home.html" with the actual path to your home page
+        }
+    </script>
+</body>
+
+</html>

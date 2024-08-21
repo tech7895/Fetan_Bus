@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block title %}Payment Options{% endblock %}
+
+{% block body %}
+<br>
+<h4 class="titles">Choose your payment option</h4>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="payment-options">
+                {% for field in fields %}
+                <div class="payment-option">
+                    <img src="../media/{{ field.bank_name|lower() }}.png" alt="{{ field.bank_name }} Logo" class="max-size"></img><br>
+                    <button class="pay-btn" data-payment-method="{{ field.id }}" data-bus-id="{{ bus.id }}" data-bank-name="{{ field.bank_name }}">Choose</button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const payButtons = document.querySelectorAll('.pay-btn');
+        payButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                const paymentMethod = button.getAttribute('data-payment-method');
+                const busId = button.getAttribute('data-bus-id');
+                const bankName = button.getAttribute('data-bank-name'); // Get the bank name from the button's data attribute
+                redirectToPayment(busId, paymentMethod, bankName); // Call the redirectToPayment function with busId, paymentMethod, and bankName
+            });
+        });
+    });
+
+    function redirectToPayment(busId, paymentMethod, bankName) {
+        window.location.href = `/make-payment/${busId}?payment_id=${paymentMethod}&bank_name=${bankName}`;  // Pass payment option ID, bus ID, and bank name in the URL
+    }
+</script>
+
+<link rel="stylesheet" href="../static/css/payment_options.css">
+{% endblock %}

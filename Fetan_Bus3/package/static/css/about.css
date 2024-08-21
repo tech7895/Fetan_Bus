@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #003514;
+    color: white;
+}
+
+.container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 0 20px;
+    
+}
+
+h1 {
+    text-align: center;
+    color: #17f50f;
+}
+
+p {
+    line-height: 1.6;
+    color: #e5ec7b;
+}
+
+ /* Additional styles for the back button */
+ .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background-image: url("../images/back.png"); /* Use url() to specify the path to the image */
+    background-size: contain;  /*Adjust the background size as needed */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    /* background-color: transparent; Set background color to transparent */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+.back-button:hover {
+    opacity: 0.5;
+
+    
+}
+
+.back-button::after {
+    content: "Back to Home";
+    position: absolute;
+    top: 100%; /* position it just below the button */
+    left: 50%; /* horizontally center it */
+    transform: translateX(-50%);
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: none; /* initially hidden */
+  }
+
+
+
+
+
+  button:hover {
+    background-color: #8bc4a1;
+    transition: ease-in-out;
+    font-weight: bold;
+}

@@ -1,0 +1,54 @@
+/* Styling for the booking details */
+.container1 {
+    max-width: 90%; /* Adjust maximum width of the container */
+    height: auto;
+    margin: 20px auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding inside the container */
+    border-radius: 10px;
+    background-color: rgb(31, 34, 48);
+    box-shadow: 0 4px 8px rgba(240, 237, 237, 0.678); /* Add a subtle shadow for depth */
+}
+
+.booking-details {
+    background-color: #fff; /* White background for each booking */
+    border: 1px solid #ddd; /* Border around each booking */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px; /* Padding inside the booking container */
+    margin-bottom: 20px; /* Spacing between each booking */
+    line-height: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+}
+
+/* Clearfix to ensure proper layout with floating columns */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout for multiple columns */
+.booking-column {
+    width: 30%; /* Set width for each booking column */
+    float: left; /* Float left to create side-by-side columns */
+    margin-right: 3%; /* Right margin between columns */
+}
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+    .booking-column {
+        width: 100%; /* Full width on smaller screens */
+        margin-right: 0; /* No margin between columns */
+    }
+}
+
+.h2 {
+    color: rgb(255, 255, 255);
+    margin: 10px;
+}
+.h3 {
+    color: rgb(37, 143, 214);
+}
+
+footer {
+    display: none;
+}

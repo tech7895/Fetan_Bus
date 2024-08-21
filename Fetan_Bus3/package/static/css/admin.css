@@ -1,0 +1,51 @@
+/* static/css/styles.css */
+
+.container {
+    max-width: 80%; /* Adjust maximum width of the container */
+    height: auto;
+    margin: 20px auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding inside the container */
+    border-radius: 10px;
+    background-color: rgb(34, 29, 25);
+    box-shadow: 0 4px 8px rgba(240, 237, 237, 0.678); /* Add a subtle shadow for depth */
+}
+
+
+h3 {
+    color: rgb(223, 255, 223);
+    font-weight: bold;
+    margin-bottom: 5%;
+}
+
+
+.btn {
+    background-color: rgb(56, 70, 53);
+    border-radius: 7px;
+    padding: 15px 30px;
+    color: white;
+    margin-bottom: 15%;
+    margin-left: 23%;
+    box-shadow: 0 4px 5px rgba(240, 237, 237, 0.678); /* Add a subtle shadow for depth */
+}
+
+.btn:hover {
+    background-color: rgb(41, 128, 60);
+    transform: scale(1.1);
+    transition: 0.3s ease-in;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 30% 30%;
+    align-items: center;
+    list-style-type: none;
+    
+}
+.row a {
+    text-decoration: none;
+    font-size: 1.3vw;
+    text-align: center;
+}
+footer {
+    display: none;
+}

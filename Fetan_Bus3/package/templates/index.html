@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="image-container">
+    <div class="element">
+        <img src="{{ url_for('static', filename='images/back.jpg') }}" alt="Background Image" class="image">
+        <div class="elementsub">
+        <h21>Get Your Bus Ticket Online</h21><br>
+        <div class="arrange">
+            {% if current_user.is_authenticated %}
+            <a class="link1" href="{{ url_for('views.get_bus') }}">Book here Now</a>
+            {% else %}
+            <a class="link1" href="{{ url_for('auth.login') }}">Book here Now</a>
+            {% endif %}  
+        
+            <img src="{{ url_for('static', filename='images/bus.gif') }}" alt="Background Image" class="imageb">
+        </div>
+        
+        
+    </div>
+    </div>
+
+
+    <div class="element2">
+        <h22>Just tell us where <br>you want to go</h22>
+        <img src="{{ url_for('static', filename='images/schedule.png') }}" alt="Background Image" class="image2">
+    </div>
+
+    <div class="element3">
+        <h23>Reserve your favorite seat layout</h23>
+        <img src="{{ url_for('static', filename='images/seat.png') }}" alt="Background Image" class="image3">
+    </div>
+
+    <div class="element4">
+        <img src="{{ url_for('static', filename='images/back5.png') }}" alt="Background Image" class="image4">
+        <h24>Make             secured
+            online
+            transactions<br>
+        </h24>
+    </div>
+
+    
+</div>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+

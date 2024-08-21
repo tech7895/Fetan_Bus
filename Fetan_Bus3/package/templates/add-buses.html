@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block title %} Add Buses {% endblock %}
+
+{% block body %}
+<div class="container">
+    <h4 style="color: grey;">Add buses to the system</h4>
+    
+    <form action="" method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+
+        <div class="table-container">
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <th scope="row">Bus Type</th>
+                        <td>{{ form.bus_type(class_="form-control") }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Bus Number</th>
+                        <td>{{ form.side_number(class_="form-control") }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Bus Photo</th>
+                        <td>{{ form.bus_picture(class_="form-control") }}</td>
+                    </tr>
+
+
+                        
+
+                </tbody>
+            </table>
+            
+        </div>
+        <td>{{ form.submit(class_="btn btn-primary") }}</td>
+    </form>
+</div>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/add.css') }}">
+{% endblock %}

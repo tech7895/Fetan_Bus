@@ -1,0 +1,190 @@
+/* Container styles */
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: #2b4158;
+    border-color: #8eeb23;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+/* Adjusted column widths */
+.col-md-8 {
+    flex: 2; /* Adjust as needed */
+    margin-right: 20px; /* Space between the columns */
+}
+
+.col-md-4 {
+    flex: 1; /* Adjust as needed */
+}
+
+/* Seat column styles using CSS Grid */
+.seat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* 5 columns: 3rd column is empty */
+    gap: 10px;
+}
+
+.seat-column {
+    display: flex;
+    flex-direction: column;
+    width: 50px; /* Adjust based on seat size */
+    margin: 5px;
+}
+
+.seat-label {
+    position: relative;
+    display: block;
+    width: 2.5rem;
+    height: 3.2rem;
+    background-color: #dcdf4b; /* Yellow-green color */
+    box-shadow: 0 4px 4px rgba(56, 206, 243, 0.774); /* Add a subtle shadow for depth */
+    border: 3px solid #8eeb23;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2b2b2b;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border-radius: 7px;
+}
+
+.seat-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.seat-input:checked + .seat-label {
+    background-color: #ff8800; /* Orange color when seat is selected */
+}
+
+.selected {
+    background-color: #FFA500 !important; /* Orange color when seat is selected */
+}
+
+/* Selected seats section */
+.selected-seats {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #4becc4;
+    width: 250px;
+    border-radius: 10px;
+    align-self: flex-start; /* Align to the start of the container */
+    align-items: center;
+}
+
+.table {
+    width: 100%;
+    color: #353535;
+}
+
+.table th,
+.table td {
+    text-align: center;
+}
+
+.btn.btn-primary {
+    background-color: #4aa500; /* New primary color */
+    border-color: #007bff; /* Border color */
+    color: white;
+    border-radius: 10px;
+    padding: 7px 12px;
+    font-size: 1rem;
+    margin-left: 25%;
+    margin-top: 7%;
+}
+
+.btn.btn-primary:hover {
+    background-color: #057440;
+}
+
+.titles {
+    color: rgb(180, 1, 180);
+    text-align: center;
+    margin: 15px;
+}
+
+.titles2 {
+    color: rgb(231, 177, 0);
+    background-color: #424242;
+    padding: 10px;
+    text-align: center;
+    border-radius: 7px;
+    margin: 15px;
+}
+
+.tit1 {
+    color: #840aca;
+    margin-bottom: 5%;
+    font-size: 1.3rem;
+}
+
+.container5 {
+    max-width: 75%; /* Adjust maximum width of the container */
+    margin: 30px auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding inside the container */
+    border-radius: 10px;
+    background-color: aliceblue;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+
+/* Add this CSS to your styles */
+
+.table tbody tr {
+    border-bottom: 1px solid #cf2d2d; /* Add a border to the bottom of each row */
+}
+
+.table tbody tr:last-child {
+    border-bottom: none; /* Remove the border from the last row */
+}
+
+.table {
+    background-color: #eceaea;
+    padding: 10px;
+    padding: 10px;
+    color: #5e5c5c;
+    border-radius: 3px;
+}
+
+.inform {
+    color: rgb(218, 216, 216);
+    margin: 10px 28px;
+    font-size: 1rem;
+    position: relative;
+
+}
+
+.inform span {
+    margin-left: 157px;
+}
+.reserved {
+    background-color: #887655 !important; /* Orange color when seat is selected */
+    cursor: default;
+    color: #b8b8b8;
+    .seat-input {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .inform {
+        font-size: 0.7rem;
+    }
+
+    .inform span {
+        margin-left: 165px;
+    }
+    .selected-seats {
+        margin-left: 10%;
+    }
+}

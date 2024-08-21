@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %} Admin page {% endblock %}
+
+{% block body %}
+        <div class="container">
+            <h3>Welcome to the Admin Page</h3>
+            <div class="row">
+                <a href="{{ url_for('admin.add_buses') }}" class="btn btn-primary">Add buses</a>
+               <a href="{{ url_for('admin.manage_buses') }}" class="btn btn-primary">Manage buses</a>
+                <a href="{{ url_for('admin.get_bus') }}" class="btn btn-primary">Add bus schedules</a>
+                <a href="{{ url_for('admin.manage_schedule') }}" class="btn btn-primary">Manage bus schedules</a>
+                <a href="{{ url_for('admin.add_payment') }}" class="btn btn-primary">Add Payment Options</a>
+                <a href="{{ url_for('admin.manage_banks') }}" class="btn btn-primary">Manage Payment Options</a>
+                <a href="{{ url_for('admin.get_bus') }}" class="btn btn-primary">Show Booking info</a>
+                <a href="{{ url_for('admin.manage_buses') }}" class="btn btn-primary">Customers info</a>
+                <a href="{{ url_for('admin.add_payment') }}" class="btn btn-primary">Analytics</a>
+                <a href="{{ url_for('admin.manage_banks') }}" class="btn btn-primary">Finance</a>
+                <a href="{{ url_for('admin.manage_banks') }}" class="btn btn-primary">More</a>
+            <div>
+        </div>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+{% endblock %}

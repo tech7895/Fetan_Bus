@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block title %}Your Bookings{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/your-bookings.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="container1">
+    <h2 class="h2">Your Bookings</h2>
+    <div class="clearfix">
+        {% if bookings %}
+            {% for bus in bookings %}
+                <div class="booking-column">
+                    <div class="booking-details">
+                        <h3 class="h3">{{ bus.bus_type }}</h3>
+                        <p><strong>Bus Number:</strong> {{ bus.side_number }}</p>
+                        <p><strong>Ticket No:</strong> {{ bus.ticket_number }}</p>
+                        <p><strong>Departure:</strong> {{ bus.departure }}</p>
+                        <p><strong>Destination:</strong> {{ bus.destination }}</p>
+                        <p><strong>Departure Date:</strong> {{ bus.departure_date }}</p>
+                        <p><strong>Departure Time:</strong> {{ bus.departure_time }}</p>
+                        <p><strong>Arrival Time:</strong> {{ bus.arrival_time }}</p>
+                        <!-- Display seat numbers -->
+                        <p><strong>Seat Numbers: </strong> 
+                            {% for seat_number in bus.seat_numbers %}
+                                {{ seat_number }}{% if not loop.last %}, {% endif %}
+                            {% endfor %}
+                        </p>
+                        
+                        <p><strong>Booking Date:</strong> {{ bus.booking_date }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p style="color: white; margin: 15px;">No bookings found.</p>
+        {% endif %}
+    </div>
+</div>
+<link rel="stylesheet" href="../static/css/your_bookings.css">
+{% endblock %}

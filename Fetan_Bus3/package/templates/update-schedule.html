@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+{% block title %} Update bus schedule {% endblock %}
+
+{% block body %}
+<div class="container">
+    <h4 style="color: grey;">Update the schedule for: {{ bus.bus_type }} , Side Number: {{ bus.side_number }}</h4><br>
+    
+    <form action="{{ url_for('admin.update_schedule', field_id=field_to_update.id) }}" method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <input type="hidden" name="bus_id" value="{{ bus.id }}"> <!-- Hidden field to include bus_id -->
+
+        <div class="table-container">
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <th scope="row">Departure</th>
+                        <td>{{ form.departure }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Destination</th>
+                        <td>{{ form.destination }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Departure Date</th>
+                        <td>{{ form.departure_date }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Departure Time</th>
+                        <td>{{ form.departure_time }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Arrival Time</th>
+                        <td>{{ form.arrival_time }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Price (Birr)</th>
+                        <td>{{ form.price }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Travel packages</th>
+                        <td>{{ form.travel_packages(class_="form-control") }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"></th>
+                        <td>{{ form.update_schedule() }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/add.css') }}">
+{% endblock %}

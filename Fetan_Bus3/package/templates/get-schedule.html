@@ -1,0 +1,77 @@
+{% extends 'layout.html' %}
+
+{% block title %} Search Bus Schedules {% endblock %}
+
+{% block body %}
+<div class="container">
+
+    <div class="content">
+        <h4>
+            <img src="{{ url_for('static', filename='images/bus-icon.png') }}" alt="Bus Icon" class="icon">
+            Search Bus Schedules
+        </h4>
+    </div>
+    
+    <form id="schedule-form" action="{{ url_for('views.available_schedules') }}" method="POST">
+        <div class="mb-3">
+            <div>
+                <label for="departure" class="form-label">From:</label>
+                <select class="form-select" id="departure" name="departure">
+                    <option value="">Departure</option>
+                </select>
+                <label for="destination" class="form-label">To:</label>
+                <select class="form-select" id="destination" name="destination">
+                    <option value="">Destination</option>
+                </select>
+
+                <label for="departure_date" class="form-label">Select Departure Date</label>
+                <input type="date" class="form-control" id="departure_date" name="departure_date">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/add1.css') }}">
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const departureSelect = document.getElementById('departure');
+        const destinationSelect = document.getElementById('destination');
+        
+        // Fetch schedule data from the server and populate dropdowns
+        fetch('/get-schedule-data')
+            .then(response => response.json())
+            .then(data => {
+                data.departures.forEach(departure => {
+                    
+                    const option = document.createElement('option');
+                    option.value = departure;
+                    option.textContent = departure;
+                    departureSelect.appendChild(option);
+                });
+                data.destinations.forEach(destination => {
+                    const option = document.createElement('option');
+                    option.value = destination;
+                    option.textContent = destination;
+                    destinationSelect.appendChild(option);
+                });
+            })
+            .catch(error => console.error('Error fetching schedule data:', error));
+
+        // Form validation
+        document.getElementById('schedule-form').addEventListener('submit', function(event) {
+            var departure = document.getElementById('departure').value;
+            var destination = document.getElementById('destination').value;
+            var departure_date = document.getElementById('departure_date').value;
+            
+            if (!departure || !destination || !departure_date) {
+                alert('Please fill in all fields before submitting.');
+                event.preventDefault(); // Prevent the form from submitting
+            }
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,59 @@
+.container {
+    max-width: 80%; /* Adjust maximum width of the container */
+    height: auto;
+    margin: 20px auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding inside the container */
+    border-radius: 10px;
+    background-color: rgb(31, 34, 48);
+    box-shadow: 0 4px 8px rgba(240, 237, 237, 0.678); /* Add a subtle shadow for depth */
+}
+h3, p{
+    color: #ffcccc;
+    line-height: 30px;
+    margin: 10px;
+}
+.form-label {
+    color: #ffcccc;
+    margin-left: 10px;
+}
+
+
+.btn {
+    background-color: rgb(196, 65, 26);
+    border-radius: 7px;
+    padding: 7px 20px;
+    font-size: 0.8rem;
+    color: white;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+.btn1 {
+    background-color: rgb(87, 161, 68);
+    border-radius: 7px;
+    padding: 7px 30px;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 15%;
+    font-size: 0.8rem;
+    margin-left: 10%;
+    margin-top: 5%;
+    cursor: default;
+}
+
+.btn:hover {
+    background-color: rgb(231, 112, 0);
+
+    transition: 0.2s ease-in;
+    
+}
+.btn1:hover {
+    background-color: rgb(51, 121, 33);
+
+    transition: 0.2s ease-in;
+    
+}
+
+footer {
+    display: none;
+}

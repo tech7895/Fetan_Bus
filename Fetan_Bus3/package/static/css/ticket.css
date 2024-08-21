@@ -1,0 +1,120 @@
+.container {
+    max-width: 80%; /* Adjust maximum width of the container */
+    height: auto;
+    margin: 20px auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding inside the container */
+    border-radius: 10px;
+    background-color: rgb(31, 34, 48);
+    box-shadow: 0 4px 8px rgba(240, 237, 237, 0.678); /* Add a subtle shadow for depth */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 25% 15% 30% 30%;
+    align-items: center;
+    border-radius: 7px;
+    width: 60%;
+    height: 50%;
+    margin: 5vw auto;
+    padding: 1vw;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(248, 161, 161, 0.89); 
+    cursor: default;
+}
+
+.images-container {
+    grid-column: span 1;  /*Span one column for the image container*/ 
+    width: 80%;
+    transform: rotate(270deg);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1.3vw;
+}
+.bus-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transform: rotate(none);
+}
+
+.grid-item-header {
+    text-align: center;
+    transform: rotate(270deg);
+    width: 100%;
+    
+
+}
+
+p {
+    font-size: 1.1vw;
+    line-height: 1.5;
+    font-family: "Courier New", Courier, monospace;
+    letter-spacing: 0.7px;
+}
+
+.next-image2 {
+    width: 40%;
+    height: auto;
+    
+}
+.head1 {
+    color: white;
+    font-size: 1.6vw;
+    margin-top: 15px;
+    margin-bottom: 7px;
+}
+.titles.rotated {
+    color: rgb(81, 40, 114);
+    font-size: 1vw;
+    letter-spacing: 0.15vw;
+    width: 130%;
+
+}
+
+.titles.rotated2 {
+    font-weight: 0.5rem;
+    color: rgb(34, 156, 75);
+    font-size: 1.3vw;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-left: -1.8vw;
+    width: 150%;
+}
+
+.titles.rotated3 {
+    color: rgb(20, 124, 184);
+    font-weight: bold;
+    font-size: 1.7vw;
+    letter-spacing: 3px;
+}
+
+.btn {
+    background-color: rgb(36, 180, 0);
+    border-radius: 7px;
+    padding: 7px 30px;
+    color: white;
+    margin-bottom: 15%;
+    margin-left: 23%;
+}
+
+.btn:hover {
+    background-color: rgb(181, 231, 0);
+    transform: scale(1.1);
+    transition: 0.3s ease-in;
+}
+
+.reserved {
+    background-color: #ffcccc; /* Light red for reserved seats */
+    pointer-events: none; /* Optionally disable pointer events to prevent interaction */
+}
+
+hr {
+    display: none; /* Hide the <hr> element */
+}
+
+footer {
+    display: none;
+}
+

@@ -1,0 +1,83 @@
+{% extends 'layout.html' %}
+
+{% block title %}Make Payment{% endblock %}
+
+{% block body %}
+<h2 class="titles">Make Your Payment with {{ bank_name }}</h2>
+<div class="container">
+    <div class="row">
+
+            <div class="payment-preview">
+                <img class="max-size2" src="../media/{{ bank_name|lower() }}.png" alt="{{ bank_name }} Logo">
+            </div>
+
+
+            <div class="payment-details">
+                <h3>Payment Details</h3>
+                <p>Number of Seats: {{ num_seats }}</p>
+                <p>Amount: {{ total_amount }} Birr</p>
+                <p>Service charge (5%): {{ charge }} Birr</p>
+                <p>Grand Total: {{ total_amount + charge }} Birr</p>
+                <button id="payButton" class="btn btn-primary pay-btn">Pay</button>
+            </div>
+
+    </div>
+</div>
+
+<!-- Custom modal for confirmation -->
+<div id="confirmModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Confirm Payment</h5>
+            <span class="btn-close" id="closeModal">&times;</span>
+        </div><br>
+        <div class="modal-body">
+            Please confirm to continue
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="confirmButton">Confirm</button>
+            <button type="button" class="btn btn-secondary" id="cancelButton">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<!-- Hidden form for payment submission -->
+<form id="paymentForm" method="POST" action="/make-payment/{{ bus_id }}">
+    <input type="hidden" name="payment_id" value="{{ payment_id }}">
+    <input type="hidden" name="bank_name" value="{{ bank_name }}">
+</form>
+
+<link rel="stylesheet" href="../static/css/make_payment.css">
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const payButton = document.getElementById('payButton');
+    const confirmButton = document.getElementById('confirmButton');
+    const cancelButton = document.getElementById('cancelButton');
+    const closeModal = document.getElementById('closeModal');
+    const confirmModal = document.getElementById('confirmModal');
+    const paymentForm = document.getElementById('paymentForm');
+
+    payButton.addEventListener('click', function() {
+        confirmModal.style.display = 'block';
+    });
+
+    function hideModal() {
+        confirmModal.style.display = 'none';
+    }
+
+    cancelButton.addEventListener('click', hideModal);
+    closeModal.addEventListener('click', hideModal);
+
+    confirmButton.addEventListener('click', function() {
+        paymentForm.submit();
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target == confirmModal) {
+            hideModal();
+        }
+    });
+});
+</script>
+{% endblock %}

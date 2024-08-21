@@ -1,0 +1,54 @@
+
+{% extends 'layout.html' %}
+
+{% block body %}
+{% if fields | length < 1 %}
+<br>
+<h3 style="color: grey;">No Buses </h3>
+
+{% else %}
+<div class="table-container">
+    <h4 style="color: grey;">Manage buses</h4><br>
+<table class="table table-hov">
+    <thead>
+        <tr class="hover-row">
+            <th scope="col">ID</th>
+            <th scope="col">Date Added</th>
+            <th scope="col">Bus Name</th>
+            <th scope="col">Side Number</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for field in fields %}
+
+        <tr class="hover-row">
+            <th scope="row">{{ field.id }}</th>
+            <td>{{ field.date_added }}</td>
+         
+            <td>{{ field.bus_type }}</td>
+            <td>{{ field.side_number }}</td>
+            <td>
+                <img src="{{ field.bus_picture }}" alt="" style="max-height: 50px; max-width: 80px; border-radius: 2px;">
+            </td>
+            <td>
+                <div class="button-space">
+                <a href="/delete-bus/{{ field.id }}" class="btn btn-primary2">Delete</a>
+                </div>
+            </td>
+            
+
+        </tr>
+
+
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% endif %}
+
+<link rel="stylesheet" href="../static/css/manage.css">
+{% endblock %}

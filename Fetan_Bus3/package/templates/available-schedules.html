@@ -1,0 +1,83 @@
+<!-- available.html -->
+
+{% extends 'layout.html' %}
+
+{% block title %}Available Schedules{% endblock %}
+
+{% block body %}
+
+{% if schedules | length < 1 %}
+<h4>No available buses for the selected route</h4>
+{% else %}
+<br>
+<h3>Available Buses for the selected route</h3><br>
+<div class="table-container">
+<table class="table table-hov">
+    <!-- Table headers -->
+    <thead>
+        <!-- Header row -->
+        <tr>
+            <!-- Header columns -->
+            <th scope="col">Departure</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Bus Type</th>
+            <th scope="col">Side Number</th>
+            <th scope="col"></th>
+            <th scope="col">Departure Date</th>
+            <th scope="col">Departure Time</th>
+            <th scope="col">Arrival Time</th>
+            <th scope="col">Price (ETB)</th>
+            <th scope="col">Travel packages</th>
+            <th scope="col">    </th>
+            <!-- Add other header columns as needed -->
+            <th scope="col"></th> <!-- Add an empty header column for the "Choose" button/link -->
+        </tr>
+    </thead>
+    
+    <!-- Table body -->
+    <tbody>
+        <!-- Loop through each bus -->
+        {% for schedule in schedules %}
+        <tr class="hover-row1">
+            <!-- Bus information -->
+            <td>{{ schedule.departure }}</td>
+            <td>{{ schedule.destination }}</td>
+            <td>{{ schedule.bus.bus_type }}</td>
+            <td>{{ schedule.bus.side_number }}</td>
+        <td>
+            <img src="{{ schedule.bus.bus_picture }}" alt="" style="max-height: 80px; border-radius:10px; max-width: 120px; border-radius: 2px;">
+        </td>
+        <td>{{ schedule.departure_date.strftime('%Y-%m-%d') }}</td>
+        <td>{{ schedule.departure_time }}</td>
+        <td>{{ schedule.arrival_time }}</td>
+        <td>{{ schedule.price }}</td>
+        <td>{{ schedule.travel_packages }}</td>
+            <!-- Add other columns for bus details -->
+            <!-- Add a column for the "Choose" button/link -->
+            <td>
+                <a href="{{ url_for('views.select_seats', bus_id=schedule.id) }}" class="btn3 btn-primary3">Choose</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endif %}
+<script>
+// available.html (or separate script file)
+document.addEventListener('DOMContentLoaded', function() {
+    const busSelectionForm = document.getElementById('busSelectionForm');
+
+    busSelectionForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission behavior
+
+        const selectedBusId = document.getElementById('selectedBus').value;
+
+        // Redirect to the payment page with the selected bus_id
+        window.location.href = `/make-payment/${selectedBusId}`;
+    });
+});
+</script>
+
+<link rel="stylesheet" href="/static/css/manage2.css">
+{% endblock %}

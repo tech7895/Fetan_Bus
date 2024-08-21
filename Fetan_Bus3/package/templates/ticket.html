@@ -1,0 +1,112 @@
+{% extends 'layout.html' %}
+
+{% block title %}Ticket{% endblock %}
+
+{% block body %}
+
+<div>
+    <p class="head1">Your booking has been confirmed, please get your ticket.</p>
+</div>
+
+{% for ticket in tickets %}
+<div class="grid-container" id="grid-container-{{ loop.index }}">
+    <div class="images-container"> 
+        <img src="{{ url_for('static', filename='images/logo.png') }}" class="next-image2" alt="Right Image">
+        <h2 class="titles rotated">FETAN BUS TICKET</h2>
+    </div>
+    
+    <div class="grid-item-header">
+        <p class="titles rotated2"><strong>{{ ticket.bus_type }}</strong></p>
+        <p class="titles rotated3">{{ ticket.bus_side_number }}</p>
+    </div>
+    <div class="grid-item">
+        <p><strong>TKT:</strong><br> {{ ticket.ticket_number }}</p>
+        
+        <p><strong>Seat Number:</strong><br> {{ ticket.seat_numbers | join(', ') }}</p>
+        
+        <p><strong>Departure:</strong><br> {{ ticket.departure }}</p>
+        <p><strong>Destination:</strong><br> {{ ticket.destination }}</p>
+    </div>
+    <div class="grid-item">
+        <p><strong>Departure Date:</strong><br> {{ ticket.formatted_departure_date }}</p>
+        <p><strong>Departure Time:</strong><br> {{ ticket.departure_time }}</p>
+        <p><strong>Arrival Time:</strong><br> {{ ticket.arrival_time }}</p>
+        <p><strong>Customer Name:</strong><br> {{ ticket.user_name }}</p>
+    </div>
+    <hr>
+</div>
+{% endfor %}
+
+<div id="download-options">
+    <button class="btn btn-primary" onclick="downloadTickets('pdf')">Download as PDF</button>
+    <button class="btn btn-primary" onclick="downloadTickets('jpg')">Download as JPG</button>
+</div>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ticket.css') }}">
+<!-- Include html2canvas and jsPDF libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+<script>
+    async function downloadTickets(type) {
+        const containers = document.querySelectorAll('.grid-container');
+        const scale = 2; // Increase the scale for better resolution
+
+        // Iterate through each ticket container
+        for (let i = 0; i < containers.length; i++) {
+            const container = containers[i];
+            // Capture each container as a canvas
+            const canvas = await html2canvas(container, { scale: scale });
+            const dataURL = canvas.toDataURL('image/png');
+
+            if (type === 'jpg') {
+                // Create a link element for downloading the image
+                const link = document.createElement('a');
+                link.href = dataURL;
+                link.download = `ticket_${i + 1}.jpg`; // Ensure unique filenames
+                link.click();
+            } else if (type === 'pdf') {
+                // Create a new jsPDF instance
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF({
+                    orientation: 'landscape',
+                    unit: 'px',
+                    format: [canvas.width, canvas.height]
+                });
+
+                // Add the image to the PDF
+                pdf.addImage(dataURL, 'PNG', 0, 0, canvas.width, canvas.height);
+                pdf.save(`ticket_${i + 1}.pdf`); // Ensure unique filenames
+            }
+        }
+    }
+
+    // Prevent back navigation
+    function preventBack() {
+        history.pushState(null, null, location.href);
+        window.onpopstate = function() {
+            alert("Can't go back");
+            history.pushState(null, null, location.href);
+        };
+    }
+
+    // Execute the function to prevent back navigation
+    preventBack();
+
+    // Disable Alt + Left Arrow
+    document.addEventListener('keydown', function(event) {
+        if (event.altKey && (event.key === 'ArrowLeft' || event.key === 'ArrowRight')) {
+            event.preventDefault();
+        }
+    });
+
+    // Optional: Use beforeunload to handle browser-specific back button behavior
+    window.addEventListener("beforeunload", function (e) {
+        history.pushState(null, null, location.href);
+    });
+
+    // Periodically check and reset the state to further prevent back navigation
+    setInterval(preventBack, 100);
+</script>
+
+{% endblock %}

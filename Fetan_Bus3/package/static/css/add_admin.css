@@ -1,0 +1,182 @@
+/* Custom styles for the add route form */
+
+/* Container styles */
+.container {
+    max-width: 65%; /* Adjust maximum width of the container */
+    margin: 30px auto; /* Center the container horizontally */
+    padding: 15px; /* Add padding inside the container */
+    border-radius: 10px;
+    background-color: aliceblue;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+
+.container h4 {
+    font-size: 1.5rem;
+    color: #5c6460;
+}
+
+/* Table styles */
+.table-container {
+    margin-top: 10px; /* Add top margin for spacing */
+    border-radius: 10px;
+    overflow: hidden; /* Ensure border radius is applied */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+
+.table-container table {
+    width: 100%; /* Table fills the container width */
+    border-collapse: collapse; /* Remove space between table cells */
+    border-radius: 10px;
+    background-color: white; /* Set table background color */
+}
+
+.table-container th,
+.table-container td {
+    padding: 7px; /* Add padding for table cells */
+    text-align: left; /* Align text to the left within cells */
+    border-bottom: 1px solid #ddd; /* Add a border to table cells */
+    color: rgb(35, 35, 48);
+}
+
+.table-container th {
+    font-weight: bold; /* Make table headers bold */
+    background-color: #f4f4f4; /* Add background color to table headers */
+}
+
+.table-container tr:hover {
+    background-color: #f1f1f1; /* Change background color on hover */
+}
+
+/* Input box styles */
+input[type="text"], input[type="number"], textarea {
+    width: 100%; /* Full width */
+    padding: 5px; /* Add padding */
+    margin: 5px 0 50px 0; /* Add margin */
+    display: inline-block; /* Default display */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+input[type="text"]:focus, input[type="number"]:focus, textarea:focus {
+    border-color: #4CAF50; /* Change border color on focus */
+    outline: none; /* Remove outline */
+}
+
+/* Button styles */
+input[type="submit"] {
+    background-color: #4CAF50; /* Set background color */
+    color: white; /* Set text color */
+    padding: 10px 20px; /* Add padding */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+    font-size: 16px; /* Increase font size */
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049; /* Darken background color on hover */
+}
+
+/* Media query for smaller screens (optional) */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+}
+
+/*********************************************/
+.btn-primary {
+    background-color: rgb(230, 178, 9);
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-primary2 {
+    background-color: rgb(207, 78, 27);
+    color: white;
+    border: none;
+}
+
+.mb-3 {
+    color: #4CAF50;
+    padding: 20px;
+    background-color: #fffffffa;
+    border-radius: 10px;
+    overflow: hidden; /* Ensure border radius is applied */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+
+/************************************/
+form {
+    margin-top: 20px;
+}
+.form-select {
+    font-size: 1rem;
+    border-radius: 3px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #5a5a5a;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: #23c265;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 50px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+input[type="submit"]:hover {
+    background-color: #59fc82;
+}
+
+input[type="submit"]:focus {
+    outline: none;
+}
+.date2 {
+    font-size: 1rem;
+}
+
+.btn {
+    /* Adjust button styles as needed */
+    padding: 12px 30px;
+    margin-right: 8px; /* Add margin between buttons */
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    background-color: rgb(29, 143, 80);
+    border: none;
+    padding: 7px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    
+}
+
+.form-control {
+    color: #a88a81;
+    padding: 0;
+    margin: 0;
+}

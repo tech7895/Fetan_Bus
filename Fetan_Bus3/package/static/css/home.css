@@ -1,0 +1,159 @@
+.image-container {
+    width: 100%;
+    margin: 3px auto;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+
+    display: flex; /* Use flexbox */
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.element {
+    display: flex;
+    padding-top: 3%;
+    align-items: center;
+}
+
+.element2 {
+    display: flex;
+    align-items: center;
+
+}
+
+.element3 {
+    display: flex;
+    align-items: center;
+
+}
+
+.element4 {
+    display: flex;
+
+}
+.image {
+    width: 45%; /* Make the image take up full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50% 0 50% 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Add a shadow for better visibility */
+}
+
+.imageb {
+    width: 100%; /* Make the image take up full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5%;
+
+}
+.elementsub {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.arrange {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.image2 {
+    width: 65%; /* Make the image take up full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 15px;
+    flex: 1; /* Make the text take up remaining space */
+    perspective: 1000px; /* Adds perspective to the skew effect */
+    transform: rotateY(0deg) rotateX(30deg); /* Rotate around Y and X axes */
+    transform-origin: center; /* Rotate around center */
+
+}
+
+
+.image3 {
+    width: 100%; /* Make the image take up full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5%;
+
+}
+
+.image4 {
+    width: 60%; /* Make the image take up full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5%;
+    margin-top: 5%;
+
+}
+
+
+h21 {
+    color: rgb(26, 155, 80); /* Ensure the text is visible */
+    margin: 0; /* Remove default margin */
+    padding-left: 20px; /* Space between the image and the text */
+    margin-top: 5%;
+    font-size: 3.5vw; /* Adjust font size */
+    width: 100%;
+    flex: 1; /* Make the text take up remaining space */
+    position: relative;
+    margin-left: 50px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+.elementsub a {
+    animation: blink 1s infinite; /* Apply the animation */
+    color: aliceblue;
+    font-size: 2.3vw;
+    background-color: rgb(89, 6, 223);
+    border-radius: 7px;
+    text-decoration: none;
+    padding: 12px 40px;
+}
+
+h22 {
+    color: rgb(26, 155, 80);
+    margin: 0; /* Remove default margin */
+    /*padding-right: 20px;  Space between the image and the text */
+    font-size: 3.5vw; /* Adjust font size */
+    position: relative;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    width: 50%;
+}
+
+h23{
+    color: rgb(26, 155, 80);
+    margin: 0; /* Remove default margin */
+    /*padding-right: 20px;  Space between the image and the text */
+    font-size: 3.5vw; /* Adjust font size */
+    position: relative;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    width: 80%;
+}
+
+h24 {
+    color: rgb(26, 155, 80); /* Ensure the text is visible */
+    margin: 0; /* Remove default margin */
+    padding-left: 30px; /* Space between the image and the text */
+    font-size: 3.5vw; /* Adjust font size */
+    flex: 1; /* Make the text take up remaining space */
+    margin-top: 12%;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    position: relative;
+    width: 50%;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.elementsub a:hover {
+    background-color: rgb(224, 21, 174);
+    animation: none;
+}

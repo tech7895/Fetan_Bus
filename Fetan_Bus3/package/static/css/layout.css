@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* Clean and modern */
+}
+header {
+    width: 100%;
+    height: 6vw;
+    background-color: #1f1e30;
+    position: relative;
+    z-index: 0;
+    box-shadow: 0 4px 10px rgba(163, 181, 236, 0.65);
+}
+header a {
+    float: right;
+    font-size: 1.3vw;
+    background-color: rgb(31, 167, 115);
+    padding: 8px;
+    margin: 1.5vw 1vw;
+    text-decoration: none;
+    color: white;
+    border-radius: 7px;
+    position: relative;
+    z-index: 4;
+    
+}
+
+header a:hover {
+    background-color: rgb(67, 192, 140);
+    transition: 0.2s ease-in-out;
+}
+
+.header-links2 {
+    float: right;
+    font-size: 1.3vw;
+    background-color: rgb(187, 34, 192);
+    padding: 0.8vw;
+    margin: 1.5vw 1vw;
+    text-decoration: none;
+    color: white;
+    border-radius: 7px;
+    position: relative;
+    z-index: 4;
+    
+}
+
+.header-links2:hover {
+    background-color: rgb(200, 80, 204);
+    transition: 0.2s ease-in-out;
+}
+
+.header-links3 {
+    float: right;
+    font-size: 1.3vw;
+    background-color: rgb(184, 173, 30);
+    padding: 8px;
+    margin: 1.5vw 1vw;
+    text-decoration: none;
+    color: white;
+    border-radius: 7px;
+    position: relative;
+    z-index: 4;
+    
+}
+
+.header-links3:hover {
+    background-color: rgb(209, 100, 212);
+    transition: 0.2s ease-in-out;
+}
+
+.logo {
+    background-image: url("/static/images/logo.png");
+    width: 5.5vw;
+    height: 4.8vw;
+    z-index: 2;
+    background-size: contain;
+    float: left;
+    background-position: center;
+    background-color: white;
+    background-repeat: no-repeat;
+    border-radius: 5%;
+    margin: 0.1vw;
+    position: relative;
+}
+
+.logo:hover {
+    background-color: #f5fcbe;
+    transition: 0.2s ease-in-out;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .logo {
+        height: 4vw;
+    }
+}
+
+@media (max-width: 767px) {
+    .logo {
+        height: 3.1vw;
+    }
+}
+
+.moving-text {
+    top: 40%;
+    left: -100px;
+    animation: moveText 10s linear infinite;
+    letter-spacing: 0.15vw;
+    z-index: -1;
+    position: absolute;
+    color: #ffffff;
+}
+.moving-text h2 {
+    font-size: 1.6vw;
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateX(-100px); /* Start position */
+    }
+    100% {
+        transform: translateX(calc(100vw + 100px));
+    }
+
+}
+
+body {
+    background-color: #080710;
+}
+
+
+footer {
+
+    background-color: #39393b;
+    
+    color: aliceblue;
+    width: 100%;
+    height: 4vw;
+    text-align: center;
+    padding-top: 15px;
+    bottom: 0;
+    left: 0;
+    position: relative;
+    flex-shrink: 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    
+}
+
+/* Flash message styles */
+/* CSS for Success Flash Message */
+.flash-message.success {
+    background-color: #93fc93; /* Light green */
+    color: #006400; /* Dark green text */
+}
+
+/* CSS for Danger Flash Message */
+.flash-message.danger {
+    background-color: #faafaf; /* Light red */
+    color: #6d0202; /* Dark red text */
+}
+
+.flash-message {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    padding: 10px 25px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(226, 217, 217, 0.384);
+    z-index: 10000;
+    font-family: 'Arial', sans-serif;
+    opacity: 1; /* Initially fully visible */
+    visibility: visible; /* Initially visible */
+    transition: opacity 0.5s ease-out; /* Smooth fade out */
+}
+
+@media (max-width: 767px) {
+    .flash-message {
+        font-size: 0.7rem;
+    }
+}

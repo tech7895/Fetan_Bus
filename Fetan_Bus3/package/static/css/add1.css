@@ -1,0 +1,198 @@
+/* Custom styles for the add route form */
+
+/* Container styles */
+.container {
+    max-width: 70%; /* Adjust maximum width of the container */
+    margin: 30px auto; /* Center the container horizontally */
+    padding: 15px; /* Add padding inside the container */
+    border-radius: 10px;
+    background-color: rgb(47, 80, 58);
+    box-shadow: 0 4px 8px rgb(243, 190, 77); /* Add a subtle shadow for depth */
+
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+h4 {
+    font-size: 1.5rem;
+    display: flex;
+    color: #b2eecb;
+}
+
+h4 .icon {
+    margin-right: 10px; /* Adjust the space between the icon and the text */
+    width: 70px; /* Adjust icon width */
+    height: auto; /* Adjust icon height */
+}
+
+/* Table styles */
+.table-container {
+    margin-top: 10px; /* Add top margin for spacing */
+    border-radius: 10px;
+    overflow: hidden; /* Ensure border radius is applied */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+    
+}
+
+.table-container table {
+    width: 100%; /* Table fills the container width */
+    border-collapse: collapse; /* Remove space between table cells */
+    border-radius: 10px;
+    background-color: white; /* Set table background color */
+}
+
+.table-container th,
+.table-container td {
+    padding: 7px; /* Add padding for table cells */
+    text-align: left; /* Align text to the left within cells */
+    border-bottom: 1px solid #ddd; /* Add a border to table cells */
+    color: rgb(14, 14, 19);
+}
+
+.table-container th {
+    font-weight: bold; /* Make table headers bold */
+    background-color: #f4f4f4; /* Add background color to table headers */
+}
+
+.table-container tr:hover {
+    background-color: #f1f1f1; /* Change background color on hover */
+}
+
+/* Input box styles */
+input[type="text"], input[type="number"], textarea {
+    width: 100%; /* Full width */
+    padding: 5px; /* Add padding */
+    margin: 5px 0 50px 0; /* Add margin */
+    display: inline-block; /* Default display */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+input[type="text"]:focus, input[type="number"]:focus, textarea:focus {
+    border-color: #4CAF50; /* Change border color on focus */
+    outline: none; /* Remove outline */
+}
+
+/* Button styles */
+input[type="submit"] {
+    background-color: #4CAF50; /* Set background color */
+    color: white; /* Set text color */
+    padding: 10px 20px; /* Add padding */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+    font-size: 16px; /* Increase font size */
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049; /* Darken background color on hover */
+}
+
+/* Media query for smaller screens (optional) */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+}
+
+/*********************************************/
+.btn-primary {
+    background-color: #e9faed;
+    border: none;
+    color: #708074;
+    font-size: 1.3vw;
+    padding: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgb(243, 190, 77);
+}
+
+.btn-primary:hover {
+    background-color: #adf7c0;
+    color: #69726a;
+    transition: 0.3s ease-in-out;
+    cursor: default;
+}
+.btn-primary2 {
+    background-color: rgb(207, 78, 27);
+    color: white;
+    border: none;
+}
+
+.mb-3 {
+    color: #f1f1f1;
+    padding: 20px;
+    padding-bottom: 3vw;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-radius: 10px;
+    align-items: center;
+    overflow: hidden; /* Ensure border radius is applied */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+
+/************************************/
+form {
+    margin-top: 20px;
+}
+.form-select {
+    font-size: 1rem;
+    border-radius: 3px;
+    border-color: #c2ddca;
+    border-width: 2px;
+    padding: 3px 12px;
+
+
+}
+footer {
+    display: none;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #777272;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    border-color: #59fc82;
+    margin-bottom: 10px;
+}
+
+.date2 {
+    font-size: 1rem;
+}
+
+.btn {
+    /* Adjust button styles as needed */
+    padding: 12px 30px;
+    margin-right: 8px; /* Add margin between buttons */
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+
+.form-control {
+    color: #a88a81;
+    border-color: #c2ddca;
+    font-size: 1rem;
+    padding: 3px 12px;
+    border-radius: 5px;
+    margin: 0;
+}
