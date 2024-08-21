@@ -29,8 +29,8 @@ payment form and ticket pdf print.
 * Done :)
 * 
 ## Authors
-Yordanos Tarekegn  *** https://github.com/Yordtdy
-Samson Mekonnen  *** https://github.com/samiunique
+Yordanos Tarekegn  *** https://github.com/Yordtdy <br>
+Samson Mekonnen  *** https://github.com/samiunique <br>
 Biruk Moltot   ***  https://github.com/tech7895
 
 
