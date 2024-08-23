@@ -32,10 +32,7 @@ def get_bus():
     if request.method == 'POST':
         # Process the form data here if needed
         pass
-
-    # Get distinct bus types from the database
-    #bus_types = Bus.query.with_entities(Bus.bus_type).distinct().all()
-    #bus_types_list = [bus_type[0] for bus_type in bus_types]
+ 
     
     departures = Schedule.query.with_entities(Schedule.departure)
     departure_list = [departure[0] for departure in departures]
