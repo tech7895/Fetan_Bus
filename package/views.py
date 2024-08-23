@@ -359,7 +359,8 @@ def make_payment(bus_id):
 def show_ticket(bus_id):
     ticket_info_list = session.get('ticket_info')
 
-    # Check if ticket information is available and filter tickets for the given bus_id
+    # Check if ticket information is available and filter
+    # tickets for the given bus_id
     if not ticket_info_list or not any(ticket.get('bus_id') == str(bus_id) for ticket in ticket_info_list):
         flash('Ticket information not found or expired.')
         abort(404)
