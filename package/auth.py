@@ -140,7 +140,7 @@ def freeze_account(customer_id):
             flash('Incorrect password. Please try again.', 'danger')
 
     return render_template('delete-account.html', customer_id=customer_id)
-
+#a route to delete an account
 
 @auth.route('/delete-account/<int:customer_id>', methods=['GET', 'POST'])
 @login_required
