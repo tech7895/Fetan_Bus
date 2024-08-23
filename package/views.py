@@ -55,20 +55,6 @@ def get_schedule_data():
     return jsonify({'departures': departure_list, 'destinations': destination_list})
 
 
-"""
-
-@views.route('/get-side-numbers', methods=['GET'])
-def get_side_numbers():
-    selected_bus_type = request.args.get('bus_type')
-    if selected_bus_type:
-        side_numbers = Bus.query.filter_by(bus_type=selected_bus_type).with_entities(Bus.id, Bus.side_number).all()
-        side_numbers_list = [{'id': bus.id, 'number': bus.side_number} for bus in side_numbers]
-        return jsonify(side_numbers_list)
-    else:
-        return jsonify([])
-"""
-
-
 
 
 @views.route('/available_schedules', methods=['GET', 'POST'])
