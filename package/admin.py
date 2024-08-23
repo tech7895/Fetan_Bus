@@ -185,7 +185,7 @@ def manage_schedule():
         # Render the manage schedule page and pass the schedules and reserved seat counts
         return render_template('manage-schedule.html', schedules=schedules, reserved_seat_counts=reserved_seat_counts)
     else:
-        flash('You do not have permission to view this page.')
+        flash('You do not have permission to view this page.', 'danger')
         return redirect(url_for('views.get_schedule'))
 
 
