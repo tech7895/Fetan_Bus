@@ -66,8 +66,8 @@ class Schedule(db.Model):
 
 class Payment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    bank_name = db.Column(db.String(100), nullable=False)
-    bank_logo = db.Column(db.String(100), nullable=False)
+    bank_name = db.Column(db.String(150), nullable=False)
+    bank_logo = db.Column(db.String(150), nullable=False)
     date_added = db.Column(db.DateTime(), default=datetime.utcnow)
     
     customer_id = db.Column(db.Integer, db.ForeignKey('customer.id', ondelete='SET NULL'), nullable=True)
