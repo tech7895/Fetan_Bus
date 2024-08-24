@@ -1,7 +1,7 @@
 .container1 {
-    max-width: 95%; /* Adjust maximum width of the container */
+    max-width: 95%; /* Adjusts maximum width of the container */
     height: auto;
-    margin: 10px auto; /* Center the container horizontally */
+    margin: 10px auto; /* Centers the container horizontally */
     padding: 20px; /* Add padding inside the container */
     border-radius: 10px;
     background-color: rgb(31, 34, 48);
