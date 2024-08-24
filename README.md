@@ -29,7 +29,7 @@ payment form and ticket pdf print.
 * Configure connection between your application and the server.
 * Navigate to the installation in your browser ( The applicaton is currently hosted on : https://fetan.pythonanywhere.com/ )
 * Done :)
-* 
+
 ## Authors
 Yordanos Tarekegn  *** https://github.com/Yordtdy <br>
 Samson Mekonnen  *** https://github.com/samiunique <br>
