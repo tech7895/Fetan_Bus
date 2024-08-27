@@ -174,8 +174,10 @@ footer {
     transition: opacity 0.5s ease-out; /* Smooth fade out */
 }
 
-@media (max-width: 767px) {
-    .flash-message {
+@media (max-width: 767px)
+{
+    .flash-message
+    {
         font-size: 0.7rem;
     }
 }
