@@ -151,7 +151,6 @@ def select_seats(bus_id):
         
         if reserved_seat_counts == 60:
             flash('Seats are full, please choose another bus.', 'danger')
-            #return render_template('available-schedules.html', schedules=schedules)
             return redirect(url_for('views.available_schedules'))
         
         # Render the seat selection page and pass the selected bus information and reserved seats count
