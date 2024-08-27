@@ -115,32 +115,7 @@ def change_email(customer_id):
     return render_template('change-email.html', form=form, customer_id=customer_id)
 
 
-
-@auth.route('/freeze-account/<int:customer_id>', methods=['GET', 'POST'])
-@login_required
-def freeze_account(customer_id):
-    account_to_hide = Customer.query.get(customer_id)
-    if not account_to_hide:
-        flash('Account not found', 'danger')
-        return redirect(url_for('auth.profile'))
-
-    if request.method == 'POST':
-        password = request.form.get('password')
-        
-        if account_to_hide and account_to_hide.check_password(password):
-            try:
-                account_to_hide.hide_account()
-                db.session.commit()
-                flash('Account deleted successfully', 'success')
-                return redirect(url_for('auth.signup'))
-            except Exception as e:
-                print('Error deleting account:', e)
-                flash('An error occurred while deleting the account', 'danger')
-        else:
-            flash('Incorrect password. Please try again.', 'danger')
-
-    return render_template('delete-account.html', customer_id=customer_id)
-#a route to delete an account
+# A route to delete an account
 
 @auth.route('/delete-account/<int:customer_id>', methods=['GET', 'POST'])
 @login_required
