@@ -20,17 +20,16 @@ body {
 
     /* Ensure the background covers the entire viewport */
     height: 100vh; /* This ensures the body covers the entire viewport height */
-    margin: 0; /* Remove default body margin */
+    margin: 0; /* Removes default body margin */
 }
 .background{
     width: 430px;
     height: 520px;
-    position: absolute;
-    transform: translate(-50%,-50%);
+    positiransform: translate(-50%,-50%);
     left: 50%;
     top: 50%;
 }
-/*
+
 .background .shape{
     height: 200px;
     width: 200px;
@@ -41,21 +40,7 @@ body {
 .shape:first-child{
     background: linear-gradient(
         #1845ad,
-        #23a2f6
-    );
-    left: -80px;
-    top: -80px;
-}
-.shape:last-child{
-    background: linear-gradient(
-        to right,
-        #ff512f,
-        #f09819
-    );
-    right: -30px;
-    bottom: -80px;
-}
-*/
+     
 form{
     height: auto;
     width: fit-content;

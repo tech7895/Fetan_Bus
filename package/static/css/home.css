@@ -152,8 +152,7 @@ h24 {
     }
 }
 
-
 .elementsub a:hover {
-    background-color: rgb(224, 21, 174);
+    background-color: rgb(223, 20, 174);
     animation: none;
 }

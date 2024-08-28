@@ -87,8 +87,8 @@ class Ticket(db.Model):
     date_added = db.Column(db.DateTime, default=datetime.utcnow)
 
     # Static fields to store schedule details
-    departure = db.Column(db.String(100), nullable=False)
-    destination = db.Column(db.String(100), nullable=False)
+    departure = db.Column(db.String(120), nullable=False)
+    destination = db.Column(db.String(120), nullable=False)
     departure_date = db.Column(db.String(50), nullable=False)
     departure_time = db.Column(db.String(50), nullable=False)
     arrival_time = db.Column(db.String(50), nullable=False)
